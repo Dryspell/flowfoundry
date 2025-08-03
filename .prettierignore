@@ -1,0 +1,11 @@
+node_modules
+.next
+.vercel
+dist
+build
+coverage
+public
+*.log
+*.lock
+.env*
+*.md

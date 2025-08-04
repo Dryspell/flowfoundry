@@ -1,8 +1,49 @@
 import { Suspense } from 'react'
+import { Metadata } from 'next'
 import { TeamSection } from '@/components/marketing/TeamSection'
 import { MissionSection } from '@/components/marketing/MissionSection'
 import { TeamSkeleton } from '@/components/skeletons/TeamSkeleton'
 import { MissionSkeleton } from '@/components/skeletons/MissionSkeleton'
+
+export const metadata: Metadata = {
+  title: 'About FlowFoundry - AI Experts & Business Transformation Leaders',
+  description: 'Meet the FlowFoundry team: AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results across industries.',
+  keywords: [
+    'AI experts',
+    'transformation consultants',
+    'AI team',
+    'business transformation leaders',
+    'AI specialists',
+    'proven AI results',
+    'experienced consultants',
+    'AI strategy experts',
+    'multi-agent systems experts',
+    'operational optimization specialists'
+  ],
+  openGraph: {
+    title: 'About FlowFoundry - AI Experts & Business Transformation Leaders',
+    description: 'Meet our AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results.',
+    url: 'https://flowfoundry.ai/about',
+    images: [
+      {
+        url: '/og-image-about.png',
+        width: 1200,
+        height: 630,
+        alt: 'FlowFoundry Team - AI Experts and Business Transformation Leaders',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About FlowFoundry - AI Experts & Business Transformation Leaders',
+    description: 'Meet our AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results.',
+    images: ['/og-image-about.png'],
+  },
+  alternates: {
+    canonical: 'https://flowfoundry.ai/about',
+  },
+}
 
 // Async function to fetch team members (placeholder for future Sanity CMS integration)
 async function getTeamMembers() {
@@ -106,8 +147,65 @@ async function getTeamMembers() {
 export default async function AboutPage() {
   const teamMembers = await getTeamMembers()
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://flowfoundry.ai/about#aboutpage",
+        "url": "https://flowfoundry.ai/about",
+        "name": "About FlowFoundry",
+        "description": "Learn about FlowFoundry's AI experts and business transformation leaders with proven track records at Google, Microsoft, and McKinsey.",
+        "mainEntity": {
+          "@id": "https://flowfoundry.ai/#organization"
+        }
+      },
+      ...teamMembers.map((member) => ({
+        "@type": "Person",
+        "@id": `https://flowfoundry.ai/about#${member.id}`,
+        "name": member.name,
+        "jobTitle": member.role,
+        "description": member.bio,
+        "url": member.linkedin,
+        "email": member.email,
+        "image": `https://flowfoundry.ai${member.image}`,
+        "worksFor": {
+          "@id": "https://flowfoundry.ai/#organization"
+        },
+        "knowsAbout": member.expertise,
+        "hasCredential": member.achievements
+      })),
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flowfoundry.ai/about#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://flowfoundry.ai",
+              "name": "Home"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://flowfoundry.ai/about",
+              "name": "About"
+            }
+          }
+        ]
+      }
+    ]
+  }
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section className="py-20 sm:py-32 bg-gradient-to-br from-background via-background to-muted/50">
         <div className="container mx-auto px-6 lg:px-8 text-center">

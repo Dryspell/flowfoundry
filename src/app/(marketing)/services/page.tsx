@@ -1,10 +1,51 @@
 import { Suspense } from 'react'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import { servicesData } from '@/lib/services-data'
+
+export const metadata: Metadata = {
+  title: 'AI Consultancy Services - Multi-Agent Systems & Business Optimization',
+  description: 'Comprehensive AI solutions: Multi-agent systems, AI strategy consulting, business transformation, and operational optimization. 340% average ROI. Free consultation available.',
+  keywords: [
+    'AI consultancy services',
+    'multi-agent systems',
+    'AI strategy consulting',
+    'business transformation',
+    'operational optimization',
+    'custom AI solutions',
+    'automation services',
+    'AI implementation',
+    'business automation',
+    'AI optimization services'
+  ],
+  openGraph: {
+    title: 'AI Consultancy Services - Multi-Agent Systems & Business Optimization',
+    description: 'Comprehensive AI solutions with 340% average ROI. Multi-agent systems, AI strategy, business transformation, and operational optimization.',
+    url: 'https://flowfoundry.ai/services',
+    images: [
+      {
+        url: '/og-image-services.png',
+        width: 1200,
+        height: 630,
+        alt: 'FlowFoundry AI Consultancy Services - 340% Average ROI',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Consultancy Services - Multi-Agent Systems & Business Optimization',
+    description: 'Comprehensive AI solutions with 340% average ROI. Multi-agent systems, AI strategy, business transformation, and operational optimization.',
+    images: ['/og-image-services.png'],
+  },
+  alternates: {
+    canonical: 'https://flowfoundry.ai/services',
+  },
+}
 
 // Async function to get services data
 async function getServices() {
@@ -16,8 +57,71 @@ async function getServices() {
 export default async function ServicesPage() {
   const services = await getServices()
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://flowfoundry.ai/services#collectionpage",
+        "url": "https://flowfoundry.ai/services",
+        "name": "AI Consultancy Services",
+        "description": "Comprehensive AI solutions including multi-agent systems, AI strategy consulting, business transformation, and operational optimization.",
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": services.map((service, index) => ({
+            "@type": "Service",
+            "position": index + 1,
+            "name": service.title,
+            "description": service.description,
+            "url": `https://flowfoundry.ai/services/${service.slug}`,
+            "provider": {
+              "@id": "https://flowfoundry.ai/#organization"
+            },
+            "serviceType": "AI Consulting",
+            "offers": service.pricing.map(tier => ({
+              "@type": "Offer",
+              "name": tier.name,
+              "description": tier.description,
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "USD",
+                "description": tier.startingPrice
+              }
+            }))
+          }))
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flowfoundry.ai/services#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://flowfoundry.ai",
+              "name": "Home"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://flowfoundry.ai/services",
+              "name": "Services"
+            }
+          }
+        ]
+      }
+    ]
+  }
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section className="py-20 sm:py-32 bg-gradient-to-br from-background via-background to-muted/50">
         <div className="container mx-auto px-6 lg:px-8 text-center">

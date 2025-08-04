@@ -9,19 +9,108 @@ import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, MessageSquare, Clock, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Get Your Free AI Consultation | Flowfoundry',
-  description: 'Start your AI transformation journey today. Get a free consultation, custom ROI analysis, and detailed project proposal. Response within 2 hours during business hours.',
+  title: 'Contact FlowFoundry - Free AI Consultation & Custom ROI Analysis',
+  description: 'Start your AI transformation journey today. Get a free consultation, custom ROI analysis, and detailed project proposal. 2-hour response time. 340% average ROI proven results.',
+  keywords: [
+    'free AI consultation',
+    'AI transformation consultation',
+    'custom ROI analysis',
+    'AI project proposal',
+    'business automation consultation',
+    'AI strategy consultation',
+    'free AI assessment',
+    'AI implementation planning',
+    'contact AI experts',
+    'AI consultation services'
+  ],
   openGraph: {
-    title: 'Contact Flowfoundry - Free AI Consultation',
-    description: 'Ready to transform your business with AI? Get started with a free consultation and custom proposal.',
+    title: 'Contact FlowFoundry - Free AI Consultation & Custom ROI Analysis',
+    description: 'Start your AI transformation journey. Free consultation, custom ROI analysis, and detailed project proposal. 2-hour response guaranteed.',
+    url: 'https://flowfoundry.ai/contact',
+    images: [
+      {
+        url: '/og-image-contact.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact FlowFoundry - Free AI Consultation',
+      },
+    ],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact FlowFoundry - Free AI Consultation & Custom ROI Analysis',
+    description: 'Start your AI transformation journey. Free consultation, custom ROI analysis, and detailed project proposal. 2-hour response guaranteed.',
+    images: ['/og-image-contact.png'],
+  },
+  alternates: {
+    canonical: 'https://flowfoundry.ai/contact',
   },
 }
 
 // Enhanced contact page with multi-step form and comprehensive contact options
 export default function ContactPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://flowfoundry.ai/contact#contactpage",
+        "url": "https://flowfoundry.ai/contact",
+        "name": "Contact FlowFoundry",
+        "description": "Get a free AI consultation, custom ROI analysis, and detailed project proposal from FlowFoundry's AI experts.",
+        "mainEntity": {
+          "@id": "https://flowfoundry.ai/#organization"
+        }
+      },
+      {
+        "@type": "ContactPoint",
+        "@id": "https://flowfoundry.ai/contact#contactpoint",
+        "contactType": "customer service",
+        "email": "hello@flowfoundry.ai",
+        "availableLanguage": "English",
+        "areaServed": ["United States", "Canada", "Europe"],
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "40.7128",
+            "longitude": "-74.0060"
+          },
+          "geoRadius": "10000"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flowfoundry.ai/contact#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://flowfoundry.ai",
+              "name": "Home"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://flowfoundry.ai/contact",
+              "name": "Contact"
+            }
+          }
+        ]
+      }
+    ]
+  }
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-background via-background to-muted/30 py-16 lg:py-24">
         <div className="container mx-auto px-6 lg:px-8">

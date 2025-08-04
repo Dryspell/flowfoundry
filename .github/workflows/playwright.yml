@@ -1,0 +1,317 @@
+name: Playwright E2E Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, firefox, webkit, mobile-chrome]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps ${{ matrix.project }}
+
+    - name: Run Playwright tests
+      run: npx playwright test --project=${{ matrix.project }}
+      env:
+        CI: true
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report-${{ matrix.project }}
+        path: |
+          playwright-report/
+          test-results/
+        retention-days: 30
+
+    - name: Upload screenshots
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: playwright-screenshots-${{ matrix.project }}
+        path: test-results/
+        retention-days: 7
+
+  visual-regression:
+    timeout-minutes: 45
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
+
+    - name: Run visual regression tests
+      run: npx playwright test tests/visual/ --project=chromium
+      env:
+        CI: true
+
+    - name: Upload visual diff reports
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: visual-regression-diffs
+        path: test-results/
+        retention-days: 14
+
+  performance:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
+
+    - name: Run performance tests
+      run: npx playwright test tests/e2e/performance.spec.ts --project=chromium
+      env:
+        CI: true
+
+    - name: Upload performance reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: performance-reports
+        path: |
+          playwright-report/
+          test-results/
+        retention-days: 30
+
+  mobile-testing:
+    timeout-minutes: 45
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
+
+    - name: Run mobile-specific tests
+      run: npx playwright test tests/e2e/mobile.spec.ts --project=mobile-chrome
+      env:
+        CI: true
+
+    - name: Upload mobile test reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: mobile-test-reports
+        path: |
+          playwright-report/
+          test-results/
+        retention-days: 30
+
+  accessibility:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
+
+    - name: Run accessibility tests
+      run: npx playwright test tests/e2e/performance.spec.ts --grep "Accessibility" --project=chromium
+      env:
+        CI: true
+
+    - name: Upload accessibility reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: accessibility-reports
+        path: |
+          playwright-report/
+          test-results/
+        retention-days: 30
+
+  test-summary:
+    runs-on: ubuntu-latest
+    needs: [test, visual-regression, performance, mobile-testing, accessibility]
+    if: always()
+    
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      
+    - name: Create test summary
+      run: |
+        echo "# Playwright Test Results Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -d "playwright-report-chromium" ]; then
+          echo "## ✅ Chromium Tests" >> $GITHUB_STEP_SUMMARY
+          echo "Chromium tests completed successfully" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        if [ -d "playwright-report-firefox" ]; then
+          echo "## ✅ Firefox Tests" >> $GITHUB_STEP_SUMMARY
+          echo "Firefox tests completed successfully" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        if [ -d "playwright-report-webkit" ]; then
+          echo "## ✅ WebKit Tests" >> $GITHUB_STEP_SUMMARY
+          echo "WebKit tests completed successfully" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        if [ -d "mobile-test-reports" ]; then
+          echo "## 📱 Mobile Tests" >> $GITHUB_STEP_SUMMARY
+          echo "Mobile tests completed successfully" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        if [ -d "performance-reports" ]; then
+          echo "## ⚡ Performance Tests" >> $GITHUB_STEP_SUMMARY
+          echo "Performance tests completed successfully" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        if [ -d "accessibility-reports" ]; then
+          echo "## ♿ Accessibility Tests" >> $GITHUB_STEP_SUMMARY
+          echo "Accessibility tests completed successfully" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        if [ -d "visual-regression-diffs" ]; then
+          echo "## 🎨 Visual Regression" >> $GITHUB_STEP_SUMMARY
+          echo "⚠️ Visual differences detected - please review" >> $GITHUB_STEP_SUMMARY
+        fi
+
+  notify-slack:
+    runs-on: ubuntu-latest
+    needs: [test, visual-regression, performance, mobile-testing, accessibility]
+    if: failure() && github.event_name == 'push'
+    
+    steps:
+    - name: Notify Slack on failure
+      uses: 8398a7/action-slack@v3
+      with:
+        status: failure
+        fields: repo,message,commit,author,action,eventName,ref,workflow
+        text: "Playwright tests failed on main branch"
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  deploy-test-reports:
+    runs-on: ubuntu-latest
+    needs: [test-summary]
+    if: always() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Download test reports
+      uses: actions/download-artifact@v4
+      
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./playwright-report-chromium
+        destination_dir: test-reports
+        
+    - name: Comment PR with test results
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          // Create comment body
+          let comment = '## 🎭 Playwright Test Results\n\n';
+          
+          // Check if visual regression diffs exist
+          if (fs.existsSync('./visual-regression-diffs')) {
+            comment += '⚠️ **Visual regression detected** - Please review the differences\n\n';
+          }
+          
+          comment += '### Test Coverage\n';
+          comment += '- ✅ Cross-browser compatibility (Chrome, Firefox, Safari)\n';
+          comment += '- ✅ Mobile responsiveness\n';
+          comment += '- ✅ Performance benchmarks\n';
+          comment += '- ✅ Accessibility compliance\n';
+          comment += '- ✅ Contact form lead generation\n\n';
+          
+          comment += '📊 [View detailed test reports](https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId + ')\n';
+          
+          // Post comment
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });

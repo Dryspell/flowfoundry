@@ -36,310 +36,310 @@ export interface ServiceData {
 
 export const servicesData: ServiceData[] = [
   {
-    slug: 'multi-agent-systems',
-    title: 'Multi-Agent AI Systems',
-    subtitle: 'Intelligent automation with multiple AI agents working in harmony',
-    description: 'Transform your operations with sophisticated AI agents that collaborate to handle complex workflows, make intelligent decisions, and adapt to changing business needs. Our multi-agent systems provide 24/7 automated operations while maintaining human oversight and control.',
-    icon: Bot,
+    slug: 'custom-web-development',
+    title: 'Custom Web Development',
+    subtitle: 'Full-stack web applications built with modern frameworks',
+    description: 'Transform your business with custom web applications built using React, Next.js, and modern tech stacks. We create scalable, performance-optimized solutions that drive real business results, with optional AI capabilities to enhance functionality.',
+    icon: Wrench,
     benefits: [
-      '24/7 automated operations with minimal human intervention',
-      'Intelligent decision-making across multiple business processes',
-      'Scalable workflows that adapt to changing business requirements',
-      'Reduced operational costs by up to 60%',
-      'Improved accuracy and consistency in task execution',
-      'Real-time coordination between different AI agents',
-      'Seamless integration with existing business systems',
-      'Continuous learning and optimization capabilities'
+      'Custom React/Next.js applications built for your specific needs',
+      'Full-stack development with modern frameworks and databases',
+      'E-commerce platforms with integrated payment processing',
+      'Enterprise web applications with advanced functionality',
+      'Performance-optimized solutions for superior user experience',
+      'Mobile-responsive design that works on all devices',
+      'API development and third-party integrations',
+      'Scalable architecture designed for business growth'
     ],
     process: [
       {
         step: 1,
-        title: 'Discovery & Analysis',
-        description: 'Comprehensive analysis of your current processes, identifying opportunities for multi-agent automation and defining system requirements.',
-        duration: '2-3 weeks',
+        title: 'Requirements & Planning',
+        description: 'Comprehensive analysis of your business requirements, user needs, and technical specifications to design the optimal web solution.',
+        duration: '1-2 weeks',
         deliverables: [
-          'Process mapping and automation opportunities assessment',
-          'Technical architecture recommendations',
-          'ROI projections and implementation roadmap',
-          'Risk assessment and mitigation strategies'
+          'Detailed project requirements and specifications',
+          'Technical architecture and technology stack recommendations',
+          'UI/UX wireframes and design mockups',
+          'Project timeline and development roadmap'
         ]
       },
       {
         step: 2,
-        title: 'Agent Design & Architecture',
-        description: 'Design specialized AI agents for different functions and create the coordination framework for seamless interaction.',
-        duration: '3-4 weeks',
+        title: 'Design & Prototyping',
+        description: 'Create responsive designs and interactive prototypes that align with your brand and provide exceptional user experience.',
+        duration: '2-3 weeks',
         deliverables: [
-          'Multi-agent system architecture design',
-          'Individual agent specifications and capabilities',
-          'Communication protocols and coordination mechanisms',
-          'Integration specifications with existing systems'
+          'Complete UI/UX design system',
+          'Responsive design mockups for all screen sizes',
+          'Interactive prototypes and user flows',
+          'Brand integration and style guide'
         ]
       },
       {
         step: 3,
-        title: 'Development & Training',
-        description: 'Build and train the AI agents, implementing the coordination system and ensuring robust performance across scenarios.',
-        duration: '6-8 weeks',
+        title: 'Development & Implementation',
+        description: 'Build your web application using modern frameworks, implementing both frontend and backend functionality with best practices.',
+        duration: '6-12 weeks',
         deliverables: [
-          'Fully developed multi-agent system',
-          'Trained and tested AI agents',
-          'Monitoring and management dashboard',
-          'Comprehensive testing and validation reports'
+          'Fully functional web application',
+          'Responsive frontend built with React/Next.js',
+          'Robust backend API and database architecture',
+          'Comprehensive testing and quality assurance'
         ]
       },
       {
         step: 4,
-        title: 'Deployment & Integration',
-        description: 'Deploy the system in your environment with careful integration, monitoring, and gradual rollout to ensure smooth transition.',
-        duration: '2-3 weeks',
+        title: 'Testing & Deployment',
+        description: 'Thorough testing across devices and browsers, followed by secure deployment to production environments.',
+        duration: '1-2 weeks',
         deliverables: [
-          'Production deployment of multi-agent system',
-          'Staff training and change management support',
-          'Performance monitoring and optimization',
-          'Documentation and operational procedures'
+          'Cross-browser and device compatibility testing',
+          'Performance optimization and security audits',
+          'Production deployment and environment setup',
+          'Documentation and training materials'
         ]
       },
       {
         step: 5,
-        title: 'Optimization & Scaling',
-        description: 'Continuous monitoring, optimization, and scaling of the system based on performance data and evolving business needs.',
+        title: 'Support & Maintenance',
+        description: 'Ongoing support, performance monitoring, and feature enhancements to ensure your web application continues to perform optimally.',
         duration: 'Ongoing',
         deliverables: [
-          'Performance optimization recommendations',
-          'System scaling and enhancement roadmap',
-          'Regular system health reports',
-          'Continuous improvement implementations'
+          'Regular performance monitoring and optimization',
+          'Security updates and maintenance',
+          'Feature enhancements and improvements',
+          'Technical support and consultation'
         ]
       }
     ],
     technologies: [
       {
-        category: 'AI Frameworks',
-        technologies: ['LangChain', 'AutoGen', 'CrewAI', 'OpenAI API', 'Anthropic Claude']
+        category: 'Frontend',
+        technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion']
       },
       {
-        category: 'Coordination',
-        technologies: ['Apache Kafka', 'Redis', 'RabbitMQ', 'WebSockets', 'gRPC']
+        category: 'Backend',
+        technologies: ['Node.js', 'Express', 'NestJS', 'Python', 'FastAPI']
       },
       {
-        category: 'Deployment',
-        technologies: ['Docker', 'Kubernetes', 'AWS/Azure/GCP', 'Terraform', 'GitHub Actions']
+        category: 'Database',
+        technologies: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Supabase']
       },
       {
-        category: 'Monitoring',
-        technologies: ['Prometheus', 'Grafana', 'DataDog', 'New Relic', 'Custom Dashboards']
-      }
-    ],
-    pricing: [
-      {
-        name: 'Starter',
-        description: 'Perfect for small teams looking to automate 2-3 key processes',
-        startingPrice: '$25,000',
-        timeline: '8-12 weeks',
-        features: [
-          '2-3 specialized AI agents',
-          'Basic coordination system',
-          'Integration with up to 3 existing systems',
-          'Standard monitoring dashboard',
-          '3 months of support and optimization',
-          'Staff training included'
-        ]
-      },
-      {
-        name: 'Professional',
-        description: 'Comprehensive solution for mid-sized businesses with complex workflows',
-        startingPrice: '$75,000',
-        timeline: '12-16 weeks',
-        features: [
-          '5-8 specialized AI agents',
-          'Advanced coordination and workflow management',
-          'Integration with up to 8 existing systems',
-          'Custom monitoring and analytics dashboard',
-          '6 months of support and optimization',
-          'Advanced staff training and change management',
-          'Performance optimization included'
-        ]
-      },
-      {
-        name: 'Enterprise',
-        description: 'Full-scale multi-agent ecosystem for large organizations',
-        startingPrice: '$150,000',
-        timeline: '16-24 weeks',
-        features: [
-          '10+ specialized AI agents',
-          'Enterprise-grade coordination platform',
-          'Unlimited system integrations',
-          'Advanced analytics and AI insights platform',
-          '12 months of support and continuous optimization',
-          'Comprehensive training and change management',
-          'Custom agent development for specific needs',
-          'Dedicated success manager'
-        ]
-      }
-    ],
-    caseStudies: ['manufacturing-automation', 'customer-service-transformation']
-  },
-  {
-    slug: 'operational-optimization',
-    title: 'Operational Optimization',
-    subtitle: 'Streamline processes and maximize efficiency with AI-driven analysis',
-    description: 'Unlock hidden efficiencies in your operations through AI-powered process analysis, optimization, and continuous improvement. Our solutions identify bottlenecks, reduce waste, and enhance productivity while maintaining quality standards.',
-    icon: Cog,
-    benefits: [
-      'Process efficiency improvements of 40-70%',
-      'Cost reduction through waste elimination and optimization',
-      'Real-time operational insights and performance tracking',
-      'Predictive maintenance and resource allocation',
-      'Quality improvement through automated monitoring',
-      'Data-driven decision making at all operational levels',
-      'Scalable optimization that grows with your business',
-      'Integration with existing operational systems'
-    ],
-    process: [
-      {
-        step: 1,
-        title: 'Operational Assessment',
-        description: 'Comprehensive analysis of current operations, identifying inefficiencies, bottlenecks, and optimization opportunities.',
-        duration: '2-3 weeks',
-        deliverables: [
-          'Complete operational process mapping',
-          'Efficiency gap analysis and bottleneck identification',
-          'Data quality assessment and optimization potential',
-          'Quick-win recommendations for immediate impact'
-        ]
-      },
-      {
-        step: 2,
-        title: 'AI Solution Design',
-        description: 'Design AI-powered optimization solutions tailored to your specific operational challenges and business objectives.',
-        duration: '2-3 weeks',
-        deliverables: [
-          'AI optimization strategy and architecture',
-          'Custom algorithm specifications',
-          'Integration plan with existing systems',
-          'Performance metrics and KPI framework'
-        ]
-      },
-      {
-        step: 3,
-        title: 'Implementation & Integration',
-        description: 'Deploy AI optimization tools and integrate them with your operational systems for real-time monitoring and improvement.',
-        duration: '4-6 weeks',
-        deliverables: [
-          'AI optimization platform deployment',
-          'Real-time monitoring and analytics dashboard',
-          'Automated reporting and alert systems',
-          'Staff training on new optimization tools'
-        ]
-      },
-      {
-        step: 4,
-        title: 'Performance Tuning',
-        description: 'Fine-tune the optimization algorithms based on real operational data and performance feedback.',
-        duration: '3-4 weeks',
-        deliverables: [
-          'Algorithm optimization and performance improvements',
-          'Customized operational dashboards',
-          'Process automation implementations',
-          'Performance validation and ROI measurement'
-        ]
-      },
-      {
-        step: 5,
-        title: 'Continuous Improvement',
-        description: 'Ongoing optimization, monitoring, and enhancement to ensure sustained performance improvements.',
-        duration: 'Ongoing',
-        deliverables: [
-          'Monthly performance reviews and optimizations',
-          'Quarterly strategy updates and enhancements',
-          'Continuous system learning and adaptation',
-          'Regular ROI reporting and improvement recommendations'
-        ]
-      }
-    ],
-    technologies: [
-      {
-        category: 'Analytics & ML',
-        technologies: ['Python', 'TensorFlow', 'Scikit-learn', 'Pandas', 'NumPy']
-      },
-      {
-        category: 'Process Mining',
-        technologies: ['Celonis', 'Process Street', 'Nintex', 'UiPath Process Mining']
-      },
-      {
-        category: 'Data Platforms',
-        technologies: ['Snowflake', 'Databricks', 'AWS Redshift', 'PostgreSQL', 'MongoDB']
-      },
-      {
-        category: 'Visualization',
-        technologies: ['Tableau', 'Power BI', 'Grafana', 'D3.js', 'Custom Dashboards']
+        category: 'Cloud & DevOps',
+        technologies: ['AWS', 'Vercel', 'Docker', 'GitHub Actions', 'Terraform']
       }
     ],
     pricing: [
       {
         name: 'Essential',
-        description: 'Core optimization for small to medium operations',
+        description: 'Perfect for small businesses looking for a professional web presence',
         startingPrice: '$15,000',
         timeline: '6-8 weeks',
         features: [
-          'Process analysis and optimization for 2-3 key areas',
-          'Basic AI-powered monitoring dashboard',
-          'Integration with up to 3 data sources',
-          'Monthly performance reports',
-          '3 months of support and fine-tuning',
-          'Basic staff training included'
+          'Custom React/Next.js web application',
+          'Responsive design for all devices',
+          'Basic CMS integration',
+          'Contact forms and basic functionality',
+          '3 months of support and maintenance',
+          'SEO optimization included'
         ]
       },
       {
-        name: 'Advanced',
-        description: 'Comprehensive optimization for complex operations',
-        startingPrice: '$45,000',
+        name: 'Professional',
+        description: 'Comprehensive solution for growing businesses with complex requirements',
+        startingPrice: '$35,000',
         timeline: '8-12 weeks',
         features: [
-          'End-to-end operational optimization',
-          'Advanced AI analytics and predictive insights',
-          'Integration with up to 8 data sources',
-          'Real-time monitoring and automated alerts',
-          '6 months of support and continuous optimization',
-          'Advanced training and change management',
-          'Custom dashboard development'
+          'Full-stack web application with custom features',
+          'Advanced user authentication and management',
+          'Database integration and API development',
+          'Third-party service integrations',
+          '6 months of support and optimization',
+          'Performance monitoring and analytics',
+          'Advanced SEO and conversion optimization'
         ]
       },
       {
         name: 'Enterprise',
-        description: 'Large-scale optimization for enterprise operations',
-        startingPrice: '$100,000',
+        description: 'Large-scale web applications for enterprise organizations',
+        startingPrice: '$75,000',
         timeline: '12-16 weeks',
         features: [
-          'Organization-wide operational optimization',
-          'AI-powered predictive analytics and forecasting',
-          'Unlimited data source integrations',
-          'Advanced process automation capabilities',
-          '12 months of support and continuous improvement',
-          'Executive training and strategic consulting',
-          'Custom AI model development',
-          'Dedicated optimization specialist'
+          'Enterprise-grade web application platform',
+          'Advanced security and compliance features',
+          'Scalable cloud infrastructure setup',
+          'Multiple integrations and API endpoints',
+          '12 months of support and continuous optimization',
+          'Dedicated development team access',
+          'Custom feature development and scaling',
+          'Performance optimization and monitoring'
         ]
       }
     ],
-    caseStudies: ['retail-optimization', 'healthcare-workflow']
+    caseStudies: ['manufacturing-automation', 'retail-optimization']
   },
   {
-    slug: 'ai-transformation',
-    title: 'AI-Accelerated Transformation',
-    subtitle: 'Complete business transformation powered by AI strategy and implementation',
-    description: 'Transform your entire business with a comprehensive AI strategy that touches every aspect of your operations. From strategy development to full implementation, we guide you through a complete transformation that positions your business for the AI-driven future.',
+    slug: 'digital-consultancy',
+    title: 'Digital Consultancy',
+    subtitle: 'Strategic technology planning and digital transformation consulting',
+    description: 'Navigate digital transformation with expert technology strategy, system architecture design, and digital modernization consulting. We help you make informed technology decisions that drive business growth and operational efficiency.',
+    icon: Cog,
+    benefits: [
+      'Strategic technology roadmap and planning',
+      'System architecture design and optimization',
+      'Digital transformation strategy and execution',
+      'Performance optimization and scalability planning',
+      'Technology stack evaluation and recommendations',
+      'Integration strategy and API architecture',
+      'Security and compliance consulting',
+      'Ongoing technical advisory and support'
+    ],
+    process: [
+      {
+        step: 1,
+        title: 'Technology Assessment',
+        description: 'Comprehensive analysis of your current technology stack, identifying opportunities for improvement and modernization.',
+        duration: '1-2 weeks',
+        deliverables: [
+          'Current technology stack audit and analysis',
+          'Performance and scalability assessment',
+          'Security and compliance review',
+          'Technology gap analysis and recommendations'
+        ]
+      },
+      {
+        step: 2,
+        title: 'Strategic Planning',
+        description: 'Develop comprehensive technology strategy aligned with your business objectives and growth plans.',
+        duration: '2-3 weeks',
+        deliverables: [
+          'Technology roadmap and strategic plan',
+          'Architecture design and technical specifications',
+          'Implementation timeline and resource planning',
+          'ROI projections and budget recommendations'
+        ]
+      },
+      {
+        step: 3,
+        title: 'Implementation Support',
+        description: 'Provide guidance and support during the implementation of technology initiatives and system upgrades.',
+        duration: '4-8 weeks',
+        deliverables: [
+          'Technical implementation guidance',
+          'Architecture review and optimization',
+          'Integration planning and support',
+          'Team training and knowledge transfer'
+        ]
+      },
+      {
+        step: 4,
+        title: 'Performance Optimization',
+        description: 'Optimize system performance, security, and scalability based on real-world usage and data.',
+        duration: '2-3 weeks',
+        deliverables: [
+          'Performance analysis and optimization',
+          'Security hardening and compliance',
+          'Scalability improvements and planning',
+          'Documentation and best practices guide'
+        ]
+      },
+      {
+        step: 5,
+        title: 'Ongoing Advisory',
+        description: 'Continuous strategic technology advisory to ensure your systems evolve with your business needs.',
+        duration: 'Ongoing',
+        deliverables: [
+          'Regular technology reviews and updates',
+          'Strategic advisory and consulting',
+          'Technology trend analysis and recommendations',
+          'Continuous improvement planning'
+        ]
+      }
+    ],
+    technologies: [
+      {
+        category: 'Architecture & Planning',
+        technologies: ['System Design', 'Microservices', 'API Architecture', 'Cloud Architecture']
+      },
+      {
+        category: 'Cloud Platforms',
+        technologies: ['AWS', 'Microsoft Azure', 'Google Cloud', 'Vercel', 'Digital Ocean']
+      },
+      {
+        category: 'DevOps & Infrastructure',
+        technologies: ['Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Monitoring']
+      },
+      {
+        category: 'Strategy & Planning',
+        technologies: ['Technology Roadmaps', 'Risk Assessment', 'Compliance', 'Performance Analysis']
+      }
+    ],
+    pricing: [
+      {
+        name: 'Strategic Assessment',
+        description: 'Technology strategy and planning for growing businesses',
+        startingPrice: '$10,000',
+        timeline: '3-4 weeks',
+        features: [
+          'Technology stack assessment and recommendations',
+          'Strategic technology roadmap development',
+          'Architecture review and optimization plan',
+          'Implementation timeline and budget planning',
+          '3 months of strategic advisory support',
+          'Technology decision support'
+        ]
+      },
+      {
+        name: 'Digital Transformation',
+        description: 'Comprehensive technology modernization consulting',
+        startingPrice: '$25,000',
+        timeline: '6-8 weeks',
+        features: [
+          'End-to-end digital transformation strategy',
+          'System architecture design and planning',
+          'Technology migration and modernization plan',
+          'Implementation support and guidance',
+          '6 months of ongoing advisory support',
+          'Team training and knowledge transfer',
+          'Performance optimization strategy'
+        ]
+      },
+      {
+        name: 'Enterprise Advisory',
+        description: 'Large-scale technology consulting for enterprises',
+        startingPrice: '$50,000',
+        timeline: '8-12 weeks',
+        features: [
+          'Organization-wide technology strategy',
+          'Enterprise architecture design and governance',
+          'Multi-system integration planning',
+          'Scalability and performance optimization',
+          '12 months of strategic advisory support',
+          'Executive technology consulting',
+          'Technology team mentoring',
+          'Dedicated technology advisor'
+        ]
+      }
+    ],
+    caseStudies: ['healthcare-workflow', 'financial-risk-assessment']
+  },
+  {
+    slug: 'web-agency-services',
+    title: 'Web Development Agency Services',
+    subtitle: 'Complete web development services from design to deployment',
+    description: 'Full-service web development agency offering responsive design, API development, and cloud deployment solutions. We handle every aspect of your web presence from initial design concepts to production deployment and ongoing maintenance.',
     icon: Zap,
     benefits: [
-      'Complete business transformation with measurable ROI',
-      'Strategic AI integration across all business functions',
-      'Future-proof business model adapted for AI advantages',
-      'Comprehensive change management and staff upskilling',
-      'Competitive advantage through early AI adoption',
-      'Scalable transformation that grows with your business',
-      'Executive leadership support and strategic guidance',
-      'Cultural transformation for AI-first mindset'
+      'Professional website design and user experience',
+      'Mobile-responsive solutions that work on all devices',
+      'API development and third-party integrations',
+      'Cloud deployment and DevOps automation',
+      'E-commerce platform development and optimization',
+      'Content management system integration',
+      'Performance optimization and SEO implementation',
+      'Ongoing maintenance and support services'
     ],
     process: [
       {
@@ -476,20 +476,20 @@ export const servicesData: ServiceData[] = [
     caseStudies: ['manufacturing-transformation', 'retail-digital-transformation']
   },
   {
-    slug: 'custom-ai-solutions',
-    title: 'Custom AI Solutions',
-    subtitle: 'Tailored AI implementations designed for your unique business challenges',
-    description: 'Get AI solutions built specifically for your unique requirements and challenges. Our custom development approach ensures perfect alignment with your business processes, data, and objectives, delivering solutions that provide maximum value and competitive advantage.',
-    icon: Wrench,
+    slug: 'ai-enhanced-solutions',
+    title: 'AI-Enhanced Solutions',
+    subtitle: 'Intelligent web applications with AI capabilities',
+    description: 'Enhance your web applications with intelligent features, automated workflows, and data-driven insights. We integrate AI capabilities into your existing or new web solutions to provide smart automation and improved user experiences.',
+    icon: Bot,
     benefits: [
-      'AI solutions perfectly tailored to your specific needs',
-      'Competitive advantage through unique AI capabilities',
-      'Seamless integration with existing systems and workflows',
-      'Scalable architecture that grows with your business',
-      'Full ownership and control of your AI intellectual property',
-      'Ongoing support and evolution of your custom solutions',
-      'Expert guidance from ideation to deployment',
-      'Measurable ROI through targeted solution design'
+      'Smart web applications with AI-powered features',
+      'Automated workflow optimization and efficiency',
+      'Data analytics and intelligent insights integration',
+      'Natural language processing and chatbot capabilities',
+      'Machine learning-enhanced user experiences',
+      'Intelligent content management and recommendations',
+      'Predictive analytics and business intelligence',
+      'Seamless AI integration with existing web platforms'
     ],
     process: [
       {

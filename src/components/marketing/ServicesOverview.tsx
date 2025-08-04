@@ -7,32 +7,32 @@ import { motion } from "framer-motion"
 
 const services = [
   {
-    id: "multi-agent-systems",
-    title: "Multi-Agent AI Systems",
-    description: "Intelligent automation with multiple AI agents working in harmony to handle complex workflows and decision-making processes.",
-    icon: Bot,
-    benefits: ["24/7 Automated Operations", "Intelligent Decision Making", "Scalable Workflows"]
-  },
-  {
-    id: "operational-optimization",
-    title: "Operational Optimization",
-    description: "Streamline processes and maximize efficiency with AI-driven analysis and optimization of your business operations.",
-    icon: Cog,
-    benefits: ["Cost Reduction", "Process Efficiency", "Performance Analytics"]
-  },
-  {
-    id: "ai-transformation",
-    title: "AI-Accelerated Transformation",
-    description: "Complete business transformation powered by AI, from strategy development to implementation and optimization.",
-    icon: Zap,
-    benefits: ["Strategic Planning", "Full Implementation", "Ongoing Support"]
-  },
-  {
-    id: "custom-ai-solutions",
-    title: "Custom AI Solutions",
-    description: "Tailored AI implementations designed specifically for your unique business challenges and requirements.",
+    id: "custom-web-development",
+    title: "Custom Web Development",
+    description: "Full-stack web applications built with modern frameworks like React and Next.js, designed for scalability and performance.",
     icon: Wrench,
-    benefits: ["Bespoke Development", "Industry-Specific", "Scalable Architecture"]
+    benefits: ["React/Next.js Applications", "Full-Stack Solutions", "E-commerce Platforms"]
+  },
+  {
+    id: "digital-consultancy",
+    title: "Digital Consultancy",
+    description: "Strategic technology planning, system architecture design, and digital transformation consulting for modern businesses.",
+    icon: Cog,
+    benefits: ["Technology Strategy", "System Architecture", "Performance Optimization"]
+  },
+  {
+    id: "web-agency-services",
+    title: "Web Development Agency Services",
+    description: "Complete web development services including responsive design, API development, and cloud deployment solutions.",
+    icon: Zap,
+    benefits: ["Responsive Design", "API Development", "Cloud Deployment"]
+  },
+  {
+    id: "ai-enhanced-solutions",
+    title: "AI-Enhanced Solutions",
+    description: "Intelligent web applications with AI capabilities, automated workflows, and data-driven insights to enhance your digital solutions.",
+    icon: Bot,
+    benefits: ["Smart Web Applications", "Automated Workflows", "Data Analytics"]
   }
 ]
 
@@ -42,11 +42,11 @@ export function ServicesOverview() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Our AI Consultancy Services
+            Our Technology Consultancy Services
           </h2>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Comprehensive AI solutions designed to transform your business operations 
-            and accelerate growth through intelligent automation.
+            Comprehensive web development and digital solutions designed to transform your business operations 
+            and accelerate growth through modern technology and intelligent automation.
           </p>
         </div>
 

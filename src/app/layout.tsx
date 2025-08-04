@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'FlowFoundry - AI Transformation & Business Automation Solutions',
+    default: 'FlowFoundry - Technology Consultancy & Web Development Solutions',
     template: '%s | FlowFoundry'
   },
   description: 'Transform your business with AI-powered solutions. Expert consultancy in multi-agent systems, operational optimization, and custom AI development. 340% average ROI proven results.',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'multi-agent systems',
     'AI optimization',
     'business automation',
-    'AI transformation',
+    'technology consultancy',
     'operational optimization'
   ],
   authors: [{ name: 'FlowFoundry Team' }],
@@ -47,20 +47,20 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://flowfoundry.ai',
     siteName: 'FlowFoundry',
-    title: 'FlowFoundry - AI Transformation & Business Automation Solutions',
+    title: 'FlowFoundry - Technology Consultancy & Web Development Solutions',
     description: 'Transform your business with AI-powered solutions. Expert consultancy in multi-agent systems, operational optimization, and custom AI development. 340% average ROI proven results.',
     images: [
       {
         url: '/og-image-default.png',
         width: 1200,
         height: 630,
-        alt: 'FlowFoundry - AI Transformation Solutions',
+        alt: 'FlowFoundry - Technology Consultancy Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FlowFoundry - AI Transformation & Business Automation Solutions',
+    title: 'FlowFoundry - Technology Consultancy & Web Development Solutions',
     description: 'Transform your business with AI-powered solutions. Expert consultancy in multi-agent systems, operational optimization, and custom AI development.',
     images: ['/og-image-default.png'],
     creator: '@flowfoundry',

@@ -115,7 +115,7 @@ export interface CaseStudy {
 export const caseStudiesData: CaseStudy[] = [
   // 1. Manufacturing Automation
   {
-    title: "Smart Manufacturing Revolution: AI-Powered Quality Control",
+    title: "Digital Manufacturing Platform: Quality Control System with AI Enhancement",
     slug: "manufacturing-automation",
     client: {
       name: "TechManufacturing Inc.",
@@ -149,15 +149,15 @@ export const caseStudiesData: CaseStudy[] = [
       ]
     },
     solution: {
-      overview: "Implemented a comprehensive multi-agent AI system for real-time quality monitoring and production optimization, featuring computer vision for automated inspection, predictive analytics for quality forecasting, and intelligent coordination between production stages.",
-      servicesUsed: ["Multi-Agent AI Systems", "Computer Vision Implementation", "Predictive Analytics"],
-      technicalApproach: "Deployed edge AI devices with computer vision models for real-time defect detection, integrated machine learning algorithms for predictive quality analytics, and created a multi-agent coordination system for optimizing production flow based on quality metrics.",
+      overview: "Developed a comprehensive digital manufacturing platform with real-time quality monitoring and production optimization, featuring web-based dashboards, automated inspection systems enhanced with computer vision, and predictive analytics for quality forecasting.",
+      servicesUsed: ["Custom Web Development", "Digital Consultancy", "AI-Enhanced Solutions"],
+      technicalApproach: "Built a React-based web platform with real-time dashboards, integrated computer vision APIs for automated inspection, implemented predictive analytics with cloud-based machine learning, and created automated production flow optimization based on quality metrics.",
       innovations: [
-        "Custom computer vision models trained on specific product defects",
-        "Real-time multi-agent coordination between inspection stations",
-        "Predictive quality algorithms preventing defects before occurrence",
-        "Automated production line adjustment based on quality trends",
-        "Integration with existing MES and ERP systems"
+        "Custom web-based quality control dashboard with real-time monitoring",
+        "Computer vision API integration for automated defect detection",
+        "Predictive analytics platform for quality forecasting",
+        "Automated production line adjustment through web interfaces",
+        "Seamless integration with existing MES and ERP systems"
       ],
       timeline: [
         {
@@ -406,7 +406,7 @@ export const caseStudiesData: CaseStudy[] = [
 
   // 2. Retail Optimization
   {
-    title: "Retail Revolution: AI-Powered Inventory and Demand Optimization",
+    title: "E-commerce Platform Optimization: Inventory Management with Intelligent Forecasting",
     slug: "retail-optimization", 
     client: {
       name: "Retail Dynamics",
@@ -440,7 +440,7 @@ export const caseStudiesData: CaseStudy[] = [
       ]
     },
     solution: {
-      overview: "Deployed comprehensive AI-powered demand prediction and automated inventory optimization system featuring machine learning algorithms for demand forecasting, multi-location inventory coordination, and intelligent supplier management with real-time optimization capabilities.",
+      overview: "Developed a comprehensive e-commerce inventory management platform with automated optimization features, including web-based demand forecasting enhanced with machine learning, multi-location inventory coordination, and intelligent supplier management with real-time optimization capabilities.",
       servicesUsed: ["Predictive Analytics", "Operational Optimization", "Custom AI Solutions"],
       technicalApproach: "Implemented advanced machine learning models for demand prediction using historical sales data, market trends, and external factors. Created automated inventory optimization algorithms with multi-location coordination and integrated supplier management system with intelligent ordering automation.",
       innovations: [

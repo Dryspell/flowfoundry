@@ -8,10 +8,10 @@ import { ServicesOverviewSkeleton } from '@/components/skeletons/ServicesOvervie
 import { SocialProofSkeleton } from '@/components/skeletons/SocialProofSkeleton'
 
 export const metadata: Metadata = {
-  title: 'AI Transformation & Business Automation Solutions',
+  title: 'Technology Consultancy & Web Development Solutions',
   description: 'Transform your business with AI-powered multi-agent systems, operational optimization, and custom solutions. 340% average ROI. Free consultation available. Proven results in manufacturing, retail, healthcare & finance.',
   keywords: [
-    'AI transformation',
+    'technology consultancy',
     'business automation',
     'multi-agent systems',
     'operational optimization',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'custom AI solutions'
   ],
   openGraph: {
-    title: 'AI Transformation & Business Automation Solutions - FlowFoundry',
+    title: 'Technology Consultancy & Web Development Solutions - FlowFoundry',
     description: 'Transform your business with AI-powered solutions. 340% average ROI, proven results across industries. Free consultation available.',
     url: 'https://flowfoundry.ai',
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Transformation & Business Automation Solutions - FlowFoundry',
+    title: 'Technology Consultancy & Web Development Solutions - FlowFoundry',
     description: 'Transform your business with AI-powered solutions. 340% average ROI, proven results across industries. Free consultation available.',
     images: ['/og-image-homepage.png'],
   },

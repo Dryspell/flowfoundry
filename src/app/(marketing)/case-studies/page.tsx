@@ -55,12 +55,12 @@ export default async function CaseStudiesPage() {
         "@type": "CollectionPage",
         "@id": "https://flowfoundry.ai/case-studies#collectionpage",
         "url": "https://flowfoundry.ai/case-studies",
-        "name": "AI Success Stories & Case Studies",
-        "description": "Real AI transformation results with 340% average ROI across manufacturing, retail, healthcare, and financial services.",
+        "name": "Technology Solutions & Case Studies",
+        "description": "Real web development and technology transformation results with 340% average ROI across manufacturing, retail, healthcare, and financial services.",
         "mainEntity": {
           "@type": "ItemList",
-          "name": "AI Case Studies",
-          "description": "Success stories and case studies from FlowFoundry's AI transformation projects"
+          "name": "Technology Case Studies",
+          "description": "Success stories and case studies from FlowFoundry's web development and technology transformation projects"
         }
       },
       {

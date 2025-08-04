@@ -19,10 +19,10 @@ const navigation = [
     name: 'Services', 
     href: '/services',
     submenu: [
-      { name: 'Multi-Agent AI Systems', href: '/services/multi-agent-systems' },
-      { name: 'Operational Optimization', href: '/services/operational-optimization' },
-      { name: 'AI Transformation', href: '/services/ai-transformation' },
-      { name: 'Custom AI Solutions', href: '/services/custom-ai-solutions' }
+      { name: 'Custom Web Development', href: '/services/custom-web-development' },
+      { name: 'Digital Consultancy', href: '/services/digital-consultancy' },
+      { name: 'Web Agency Services', href: '/services/web-agency-services' },
+      { name: 'AI-Enhanced Solutions', href: '/services/ai-enhanced-solutions' }
     ]
   },
   { name: 'Case Studies', href: '/case-studies' },

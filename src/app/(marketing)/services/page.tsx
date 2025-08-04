@@ -8,10 +8,10 @@ import { ArrowRight, CheckCircle } from 'lucide-react'
 import { servicesData } from '@/lib/services-data'
 
 export const metadata: Metadata = {
-  title: 'AI Consultancy Services - Multi-Agent Systems & Business Optimization',
-  description: 'Comprehensive AI solutions: Multi-agent systems, AI strategy consulting, business transformation, and operational optimization. 340% average ROI. Free consultation available.',
+  title: 'Technology Consultancy Services - Web Development & Digital Solutions',
+  description: 'Comprehensive web development and technology solutions: Multi-agent systems, AI strategy consulting, business transformation, and operational optimization. 340% average ROI. Free consultation available.',
   keywords: [
-    'AI consultancy services',
+    'technology consultancy services',
     'multi-agent systems',
     'AI strategy consulting',
     'business transformation',
@@ -23,23 +23,23 @@ export const metadata: Metadata = {
     'AI optimization services'
   ],
   openGraph: {
-    title: 'AI Consultancy Services - Multi-Agent Systems & Business Optimization',
-    description: 'Comprehensive AI solutions with 340% average ROI. Multi-agent systems, AI strategy, business transformation, and operational optimization.',
+    title: 'Technology Consultancy Services - Web Development & Digital Solutions',
+    description: 'Comprehensive web development and technology solutions with 340% average ROI. Multi-agent systems, AI strategy, business transformation, and operational optimization.',
     url: 'https://flowfoundry.ai/services',
     images: [
       {
         url: '/og-image-services.png',
         width: 1200,
         height: 630,
-        alt: 'FlowFoundry AI Consultancy Services - 340% Average ROI',
+        alt: 'FlowFoundry Technology Consultancy Services - 340% Average ROI',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Consultancy Services - Multi-Agent Systems & Business Optimization',
-    description: 'Comprehensive AI solutions with 340% average ROI. Multi-agent systems, AI strategy, business transformation, and operational optimization.',
+    title: 'Technology Consultancy Services - Web Development & Digital Solutions',
+    description: 'Comprehensive web development and technology solutions with 340% average ROI. Multi-agent systems, AI strategy, business transformation, and operational optimization.',
     images: ['/og-image-services.png'],
   },
   alternates: {
@@ -64,8 +64,8 @@ export default async function ServicesPage() {
         "@type": "CollectionPage",
         "@id": "https://flowfoundry.ai/services#collectionpage",
         "url": "https://flowfoundry.ai/services",
-        "name": "AI Consultancy Services",
-        "description": "Comprehensive AI solutions including multi-agent systems, AI strategy consulting, business transformation, and operational optimization.",
+        "name": "Technology Consultancy Services",
+        "description": "Comprehensive web development and technology solutions including custom web applications, digital consultancy, cloud deployment, and AI-enhanced features.",
         "mainEntity": {
           "@type": "ItemList",
           "itemListElement": services.map((service, index) => ({
@@ -126,10 +126,10 @@ export default async function ServicesPage() {
       <section className="py-20 sm:py-32 bg-gradient-to-br from-background via-background to-muted/50">
         <div className="container mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
-            Our AI Consultancy Services
+            Our Technology Consultancy Services
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Comprehensive AI solutions designed to transform your business operations 
+            Comprehensive web development and technology solutions designed to transform your business operations 
             and accelerate growth through intelligent automation and optimization.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -5,10 +5,10 @@ import { Zap, Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-reac
 
 const navigation = {
   services: [
-    { name: 'Multi-Agent AI Systems', href: '/services/multi-agent-systems' },
-    { name: 'Operational Optimization', href: '/services/operational-optimization' },
-    { name: 'AI Transformation', href: '/services/ai-transformation' },
-    { name: 'Custom AI Solutions', href: '/services/custom-ai-solutions' }
+    { name: 'Custom Web Development', href: '/services/custom-web-development' },
+    { name: 'Digital Consultancy', href: '/services/digital-consultancy' },
+    { name: 'Web Agency Services', href: '/services/web-agency-services' },
+    { name: 'AI-Enhanced Solutions', href: '/services/ai-enhanced-solutions' }
   ],
   company: [
     { name: 'About', href: '/about' },
@@ -149,7 +149,7 @@ export function Footer() {
             <div className="text-center md:text-left">
               <h3 className="text-lg font-semibold mb-2">Stay Updated</h3>
               <p className="text-sm text-muted-foreground">
-                Get the latest insights on AI transformation and business automation
+                Get the latest insights on web development and digital transformation
               </p>
             </div>
             <div className="flex space-x-2">

@@ -23,26 +23,26 @@ export function HeroSection({ metrics }: HeroSectionProps) {
           {/* Badge */}
           <Badge variant="outline" className="mb-6 text-sm font-medium">
             <Zap className="mr-2 h-4 w-4" />
-            AI-Powered Business Transformation
+            Technology Consultancy with AI Capabilities
           </Badge>
 
           {/* Main heading */}
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            Transform Your Business with{' '}
-            <span className="text-primary">AI Excellence</span>
+            Build Scalable Web Solutions{' '}
+            <span className="text-primary">That Drive Results</span>
           </h1>
 
           {/* Subheading */}
           <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl">
-            We help small & mid-sized companies unlock unprecedented growth through 
-            custom AI solutions, multi-agent systems, and operational optimization. 
-            Join 150+ businesses already transforming with AI.
+            We help small & mid-sized companies achieve unprecedented growth through 
+            custom web development, digital transformation, and intelligent automation. 
+            Join 150+ businesses already succeeding with our technology solutions.
           </p>
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" className="text-base font-semibold">
-              Schedule Free AI Assessment
+              Schedule Free Technology Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button variant="outline" size="lg" className="text-base font-semibold">

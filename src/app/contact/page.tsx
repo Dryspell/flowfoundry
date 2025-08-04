@@ -10,7 +10,7 @@ import { ArrowRight, MessageSquare, Clock, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact FlowFoundry - Free AI Consultation & Custom ROI Analysis',
-  description: 'Start your AI transformation journey today. Get a free consultation, custom ROI analysis, and detailed project proposal. 2-hour response time. 340% average ROI proven results.',
+  description: 'Start your digital transformation journey today. Get a free consultation, custom ROI analysis, and detailed project proposal. 2-hour response time. 340% average ROI proven results.',
   keywords: [
     'free AI consultation',
     'AI transformation consultation',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Contact FlowFoundry - Free AI Consultation & Custom ROI Analysis',
-    description: 'Start your AI transformation journey. Free consultation, custom ROI analysis, and detailed project proposal. 2-hour response guaranteed.',
+    description: 'Start your digital transformation journey. Free consultation, custom ROI analysis, and detailed project proposal. 2-hour response guaranteed.',
     url: 'https://flowfoundry.ai/contact',
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact FlowFoundry - Free AI Consultation & Custom ROI Analysis',
-    description: 'Start your AI transformation journey. Free consultation, custom ROI analysis, and detailed project proposal. 2-hour response guaranteed.',
+    description: 'Start your digital transformation journey. Free consultation, custom ROI analysis, and detailed project proposal. 2-hour response guaranteed.',
     images: ['/og-image-contact.png'],
   },
   alternates: {

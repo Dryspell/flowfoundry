@@ -6,38 +6,38 @@ import { TeamSkeleton } from '@/components/skeletons/TeamSkeleton'
 import { MissionSkeleton } from '@/components/skeletons/MissionSkeleton'
 
 export const metadata: Metadata = {
-  title: 'About FlowFoundry - AI Experts & Business Transformation Leaders',
-  description: 'Meet the FlowFoundry team: AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results across industries.',
+  title: 'About FlowFoundry - Technology Consultancy & Web Development Experts',
+  description: 'Meet the FlowFoundry team: Technology consultants and web development experts from Google, Microsoft, and top consulting firms. 15+ years experience, 100+ successful projects, and proven 340% ROI results.',
   keywords: [
-    'AI experts',
-    'transformation consultants',
-    'AI team',
-    'business transformation leaders',
-    'AI specialists',
-    'proven AI results',
-    'experienced consultants',
-    'AI strategy experts',
-    'multi-agent systems experts',
-    'operational optimization specialists'
+    'technology consultants',
+    'web development experts',
+    'digital transformation consultants',
+    'full-stack developers',
+    'React Next.js experts',
+    'technology strategy',
+    'system architecture',
+    'cloud deployment experts',
+    'performance optimization',
+    'AI-enhanced solutions'
   ],
   openGraph: {
-    title: 'About FlowFoundry - AI Experts & Business Transformation Leaders',
-    description: 'Meet our AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results.',
+    title: 'About FlowFoundry - Technology Consultancy & Web Development Experts',
+    description: 'Meet our technology consultants and web development experts from Google, Microsoft, and top firms. 15+ years experience, 100+ successful projects, and proven 340% ROI results.',
     url: 'https://flowfoundry.ai/about',
     images: [
       {
         url: '/og-image-about.png',
         width: 1200,
         height: 630,
-        alt: 'FlowFoundry Team - AI Experts and Business Transformation Leaders',
+        alt: 'FlowFoundry Team - Technology Consultants and Web Development Experts',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About FlowFoundry - AI Experts & Business Transformation Leaders',
-    description: 'Meet our AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results.',
+    title: 'About FlowFoundry - Technology Consultancy & Web Development Experts',
+    description: 'Meet our technology consultants and web development experts from Google, Microsoft, and top firms. 15+ years experience, 100+ successful projects, and proven 340% ROI results.',
     images: ['/og-image-about.png'],
   },
   alternates: {
@@ -55,8 +55,8 @@ async function getTeamMembers() {
       id: "founder-ceo",
       name: "Alex Chen",
       role: "Founder & CEO",
-      bio: "Former Principal AI Engineer at Google with 15+ years in AI research and business transformation. Led AI initiatives at 3 Fortune 500 companies before founding Flowfoundry.",
-      expertise: ["AI Strategy", "Business Transformation", "Multi-Agent Systems"],
+      bio: "Former Principal Engineer at Google with 15+ years in web development, system architecture, and business transformation. Led technology initiatives at 3 Fortune 500 companies before founding Flowfoundry.",
+      expertise: ["Technology Strategy", "Web Development", "System Architecture"],
       image: "/team/alex-chen.jpg",
       linkedin: "https://linkedin.com/in/alexchen-ai",
       email: "alex@flowfoundry.ai",
@@ -70,8 +70,8 @@ async function getTeamMembers() {
       id: "cto",
       name: "Sarah Rodriguez",
       role: "Chief Technology Officer",
-      bio: "Former Senior AI Scientist at Microsoft Research with expertise in multi-agent systems and distributed AI architectures. PhD in Computer Science from Stanford.",
-      expertise: ["Multi-Agent Systems", "AI Strategy", "Operational Optimization"],
+      bio: "Former Senior Software Engineer at Microsoft with expertise in distributed systems, cloud architecture, and full-stack development. PhD in Computer Science from Stanford.",
+      expertise: ["System Architecture", "Cloud Infrastructure", "Full-Stack Development"],
       image: "/team/sarah-rodriguez.jpg",
       linkedin: "https://linkedin.com/in/sarahrodriguez-ai",
       email: "sarah@flowfoundry.ai",
@@ -85,8 +85,8 @@ async function getTeamMembers() {
       id: "head-delivery",
       name: "Michael Park",
       role: "Head of Delivery",
-      bio: "Former McKinsey Principal with 12+ years in business transformation and operational excellence. Specialized in AI implementation and change management.",
-      expertise: ["Business Transformation", "Operational Optimization", "AI Strategy"],
+      bio: "Former McKinsey Principal with 12+ years in digital transformation and technology consulting. Specialized in web platform implementation and change management.",
+      expertise: ["Digital Transformation", "Technology Consulting", "Project Management"],
       image: "/team/michael-park.jpg",
       linkedin: "https://linkedin.com/in/michaelpark-consulting",
       email: "michael@flowfoundry.ai",
@@ -99,9 +99,9 @@ async function getTeamMembers() {
     {
       id: "lead-engineer",
       name: "Emma Thompson",
-      role: "Lead AI Engineer",
-      bio: "Former Senior Engineer at OpenAI with deep expertise in large language models and automated reasoning systems. MS in AI from MIT.",
-      expertise: ["Multi-Agent Systems", "Operational Optimization"],
+      role: "Lead Full-Stack Developer",
+      bio: "Former Senior Engineer at Meta with deep expertise in React, Next.js, and scalable web applications. MS in Computer Science from MIT.",
+      expertise: ["React/Next.js Development", "Performance Optimization"],
       image: "/team/emma-thompson.jpg",
       linkedin: "https://linkedin.com/in/emmathompson-ai",
       email: "emma@flowfoundry.ai",
@@ -114,9 +114,9 @@ async function getTeamMembers() {
     {
       id: "business-strategist",
       name: "David Kumar",
-      role: "Senior Business Strategist",
-      bio: "Former Director of Strategy at Accenture with 10+ years helping SMBs adopt emerging technologies. Expert in AI ROI measurement and business case development.",
-      expertise: ["Business Transformation", "AI Strategy"],
+      role: "Senior Technology Strategist",
+      bio: "Former Director of Strategy at Accenture with 10+ years helping SMBs adopt modern web technologies. Expert in technology ROI measurement and digital strategy development.",
+      expertise: ["Technology Strategy", "Digital Transformation"],
       image: "/team/david-kumar.jpg",
       linkedin: "https://linkedin.com/in/davidkumar-strategy",
       email: "david@flowfoundry.ai",
@@ -155,7 +155,7 @@ export default async function AboutPage() {
         "@id": "https://flowfoundry.ai/about#aboutpage",
         "url": "https://flowfoundry.ai/about",
         "name": "About FlowFoundry",
-        "description": "Learn about FlowFoundry's AI experts and business transformation leaders with proven track records at Google, Microsoft, and McKinsey.",
+        "description": "Learn about FlowFoundry's technology consultants and web development experts with proven track records at Google, Microsoft, and top consulting firms.",
         "mainEntity": {
           "@id": "https://flowfoundry.ai/#organization"
         }
@@ -213,9 +213,9 @@ export default async function AboutPage() {
             About Flowfoundry
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We&apos;re on a mission to make enterprise-level AI accessible to every business. 
-            Our team of AI experts and business strategists helps companies transform 
-            their operations and achieve unprecedented growth.
+            We&apos;re on a mission to make modern web technology and digital solutions accessible to every business. 
+            Our team of technology consultants and web development experts helps companies transform 
+            their digital presence and achieve unprecedented growth.
           </p>
         </div>
       </section>

@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -40,7 +42,7 @@ export function CaseStudyTestimonial({ testimonial, clientName, className }: Cas
             {/* Main Quote */}
             <blockquote className="text-center">
               <p className="text-xl lg:text-2xl font-medium leading-relaxed text-foreground/90 italic">
-                "{testimonial.quote}"
+                &ldquo;{testimonial.quote}&rdquo;
               </p>
             </blockquote>
 
@@ -49,9 +51,11 @@ export function CaseStudyTestimonial({ testimonial, clientName, className }: Cas
               {/* Author Image (if available) */}
               {testimonial.authorImage && (
                 <div className="h-16 w-16 rounded-full bg-muted overflow-hidden">
-                  <img
+                  <Image
                     src={testimonial.authorImage}
                     alt={testimonial.author}
+                    width={64}
+                    height={64}
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -157,14 +161,14 @@ export function CaseStudyTestimonial({ testimonial, clientName, className }: Cas
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg">
-            <a href="/contact">
+            <Link href="/contact">
               Start Your Transformation
-            </a>
+            </Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <a href="/case-studies">
+            <Link href="/case-studies">
               View More Case Studies
-            </a>
+            </Link>
           </Button>
         </div>
       </div>

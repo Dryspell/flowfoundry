@@ -1,7 +1,6 @@
 'use client'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ContactFormData } from '@/types/sanity'
 import { 
@@ -117,10 +116,10 @@ export function FormStep1({ formData, onUpdate, errors }: FormStep1Props) {
       {/* Challenge Selection */}
       <div>
         <h3 className="text-lg font-semibold mb-2">
-          What's your primary business challenge?
+          What&apos;s your primary business challenge?
         </h3>
         <p className="text-muted-foreground mb-6">
-          Select the main area where you're looking to implement AI solutions
+          Select the main area where you&apos;re looking to implement AI solutions
         </p>
         
         {errors.primaryChallenge && (

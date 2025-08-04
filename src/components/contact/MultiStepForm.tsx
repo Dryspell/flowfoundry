@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useTransition } from 'react'
+import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { ContactFormProgress } from './ContactFormProgress'
@@ -281,21 +282,21 @@ export function MultiStepForm({ className }: MultiStepFormProps) {
             </div>
 
             <div className="bg-muted/50 rounded-lg p-4 text-left">
-              <h3 className="font-semibold mb-2">What's Next:</h3>
+              <h3 className="font-semibold mb-2">What&apos;s Next:</h3>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• You'll receive a confirmation email within 5 minutes</li>
+                <li>• You&apos;ll receive a confirmation email within 5 minutes</li>
                 <li>• Our team will review your requirements within 2 business hours</li>
-                <li>• We'll reach out to schedule your consultation at your preferred time</li>
+                <li>• We&apos;ll reach out to schedule your consultation at your preferred time</li>
                 <li>• Expect initial contact within 24 hours</li>
               </ul>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild variant="outline">
-                <a href="/case-studies">View Case Studies</a>
+                <Link href="/case-studies">View Case Studies</Link>
               </Button>
               <Button asChild>
-                <a href="/services">Explore Our Services</a>
+                <Link href="/services">Explore Our Services</Link>
               </Button>
             </div>
           </div>

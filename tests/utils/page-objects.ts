@@ -79,8 +79,8 @@ export class HomePage {
 
   async validateSocialProof(): Promise<void> {
     await expect(this.socialProofSection).toBeVisible();
-    await expect(this.testimonials).toHaveCount.toBeGreaterThan(0);
-    await expect(this.trustIndicators).toHaveCount.toBeGreaterThan(0);
+    await expect(this.testimonials.first()).toBeVisible();
+    await expect(this.trustIndicators.first()).toBeVisible();
   }
 }
 

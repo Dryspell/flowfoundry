@@ -74,11 +74,11 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
     if (updates.featuredOnly !== undefined) setFeaturedOnly(updates.featuredOnly)
 
     onFilterChange({
-      industry: newFilters.industry === 'all' ? undefined : newFilters.industry,
-      serviceType: newFilters.serviceType === 'all' ? undefined : newFilters.serviceType,
-      resultsRange: newFilters.resultsRange === 'all' ? undefined : newFilters.resultsRange,
-      searchQuery: newFilters.searchQuery || undefined,
-      featuredOnly: newFilters.featuredOnly || undefined
+      ...(newFilters.industry !== 'all' && { industry: newFilters.industry }),
+      ...(newFilters.serviceType !== 'all' && { serviceType: newFilters.serviceType }),
+      ...(newFilters.resultsRange !== 'all' && { resultsRange: newFilters.resultsRange }),
+      ...(newFilters.searchQuery && { searchQuery: newFilters.searchQuery }),
+      ...(newFilters.featuredOnly && { featuredOnly: newFilters.featuredOnly })
     })
   }
 

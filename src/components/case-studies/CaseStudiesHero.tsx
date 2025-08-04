@@ -42,7 +42,7 @@ export function CaseStudiesHero() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Discover how we've helped businesses like yours achieve measurable ROI through intelligent automation, 
+              Discover how we&apos;ve helped businesses like yours achieve measurable ROI through intelligent automation, 
               operational optimization, and custom AI solutions. Every case study represents real business transformation.
             </p>
           </div>

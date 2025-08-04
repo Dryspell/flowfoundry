@@ -3,12 +3,19 @@
 import { useState, useMemo } from 'react'
 import { CaseStudyCard } from './CaseStudyCard'
 import { CaseStudyFilters } from './CaseStudyFilters'
-import { getCaseStudyPreviews, filterCaseStudies } from '@/lib/case-studies-data'
+import { getCaseStudyPreviews, filterCaseStudies, CaseStudy } from '@/lib/case-studies-data'
 
 import { Button } from '@/components/ui/button'
 import { ChevronDown, SortAsc, SortDesc } from 'lucide-react'
 
 type SortOption = 'newest' | 'oldest' | 'industry' | 'impact'
+
+// Partial CaseStudy type for filtering
+type FilterableCaseStudy = Pick<CaseStudy, 'title' | 'tags' | 'featured'> & {
+  client: Pick<CaseStudy['client'], 'industry'>
+  solution: Pick<CaseStudy['solution'], 'servicesUsed' | 'overview'>
+  challenge: Pick<CaseStudy['challenge'], 'overview'>
+}
 
 interface CaseStudiesGridProps {
   className?: string
@@ -33,7 +40,7 @@ export function CaseStudiesGrid({ className }: CaseStudiesGridProps) {
   // Apply filters
   const filteredCaseStudies = useMemo(() => {
     // Convert previews to case studies format for filtering (simplified)
-    const caseStudiesForFiltering = allCaseStudies.map(preview => ({
+    const caseStudiesForFiltering: FilterableCaseStudy[] = allCaseStudies.map(preview => ({
       client: { industry: preview.industry },
       solution: { 
         servicesUsed: [preview.industry], // Simplified for filtering
@@ -45,7 +52,7 @@ export function CaseStudiesGrid({ className }: CaseStudiesGridProps) {
       featured: preview.featured
     }))
 
-    const filtered = filterCaseStudies(caseStudiesForFiltering as any, filters)
+    const filtered = filterCaseStudies(caseStudiesForFiltering as CaseStudy[], filters)
     
     // Convert back to previews
     return allCaseStudies.filter((caseStudy) => 

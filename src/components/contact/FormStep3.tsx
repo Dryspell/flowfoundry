@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -9,14 +9,12 @@ import { Textarea } from '@/components/ui/textarea'
 import { Badge } from '@/components/ui/badge'
 import { ContactFormData } from '@/types/sanity'
 import { 
-  FileText, 
   Target, 
   DollarSign, 
   Calendar,
   Users,
   Plus,
   X,
-  ChevronDown,
   Check,
   Clock,
   TrendingUp,
@@ -111,7 +109,7 @@ export function FormStep3({ formData, onUpdate, errors }: FormStep3Props) {
           Project Scope & Challenge Description *
         </Label>
         <p className="text-sm text-muted-foreground mt-1 mb-3">
-          Describe your specific challenge, current processes, and what you'd like to achieve
+          Describe your specific challenge, current processes, and what you&apos;d like to achieve
         </p>
         <div className="relative">
           <Textarea

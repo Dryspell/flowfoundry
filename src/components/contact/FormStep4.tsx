@@ -1,23 +1,19 @@
 'use client'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import { Badge } from '@/components/ui/badge'
 import { ContactFormData } from '@/types/sanity'
 import { 
   User, 
   Mail, 
   Phone, 
-  MessageSquare, 
   Calendar,
   Clock,
   PhoneCall,
   Video,
   Check,
-  HelpCircle,
   Send
 } from 'lucide-react'
 
@@ -218,7 +214,7 @@ export function FormStep4({ formData, onUpdate, errors }: FormStep4Props) {
           Specific Questions or Additional Information
         </Label>
         <p className="text-sm text-muted-foreground mt-1 mb-3">
-          Any specific questions, concerns, or additional context you'd like to share?
+          Any specific questions, concerns, or additional context you&apos;d like to share?
         </p>
         <div className="relative">
           <Textarea
@@ -251,7 +247,7 @@ export function FormStep4({ formData, onUpdate, errors }: FormStep4Props) {
               <div>
                 <div className="font-medium text-sm">Immediate Confirmation</div>
                 <div className="text-xs text-muted-foreground">
-                  You'll receive an email confirmation with your submission details
+                  You&apos;ll receive an email confirmation with your submission details
                 </div>
               </div>
             </div>

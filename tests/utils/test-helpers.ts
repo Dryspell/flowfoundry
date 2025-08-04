@@ -1,4 +1,4 @@
-import { Page, expect, Locator } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
 
 /**
  * Shared test utilities for Flowfoundry Playwright tests
@@ -43,11 +43,8 @@ export class TestHelpers {
    * Validate Core Web Vitals
    */
   async validateCoreWebVitals(): Promise<void> {
-    const vitals = await this.page.evaluate(() => {
+    const vitals = await this.page.evaluate((): Promise<{ lcp: number; fid: number; cls: number }> => {
       return new Promise((resolve) => {
-        // Get performance metrics
-        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-        
         const metrics = {
           lcp: 0, // Will be updated by LCP observer
           fid: 0, // Will be simulated
@@ -58,7 +55,9 @@ export class TestHelpers {
         const lcpObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries();
           const lastEntry = entries[entries.length - 1];
-          metrics.lcp = lastEntry.startTime;
+          if (lastEntry) {
+            metrics.lcp = lastEntry.startTime;
+          }
         });
         lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
 
@@ -140,7 +139,7 @@ export class TestHelpers {
   /**
    * Test form validation with various inputs
    */
-  async testFormValidation(formSelector: string, fieldTests: Array<{
+  async testFormValidation(fieldTests: Array<{
     selector: string,
     validValue: string,
     invalidValues: string[],
@@ -150,7 +149,7 @@ export class TestHelpers {
       // Test invalid values
       for (const invalidValue of test.invalidValues) {
         await this.page.fill(test.selector, invalidValue);
-        await this.page.blur(test.selector);
+        await this.page.locator(test.selector).blur();
         
         if (test.expectedErrorSelector) {
           await expect(this.page.locator(test.expectedErrorSelector)).toBeVisible();
@@ -159,7 +158,7 @@ export class TestHelpers {
 
       // Test valid value
       await this.page.fill(test.selector, test.validValue);
-      await this.page.blur(test.selector);
+      await this.page.locator(test.selector).blur();
       
       if (test.expectedErrorSelector) {
         await expect(this.page.locator(test.expectedErrorSelector)).not.toBeVisible();
@@ -252,7 +251,7 @@ export class BusinessAssertions {
   /**
    * Validate budget range affects lead priority
    */
-  async validateBudgetImpactOnPriority(budgetRange: string, expectedPriority: 'high' | 'medium' | 'low'): Promise<void> {
+  async validateBudgetImpactOnPriority(expectedPriority: 'high' | 'medium' | 'low'): Promise<void> {
     const priorityElement = this.page.locator('[data-testid="lead-priority"]');
     await expect(priorityElement).toContainText(expectedPriority);
   }

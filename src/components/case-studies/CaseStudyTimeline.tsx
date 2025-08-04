@@ -195,7 +195,7 @@ export function CaseStudyTimeline({ timeline, phases, className }: CaseStudyTime
             <TimelineItem
               key={index}
               phase={phase}
-              implementationPhase={implementationPhase}
+              {...(implementationPhase && { implementationPhase })}
               index={index}
               isLast={index === timeline.length - 1}
             />

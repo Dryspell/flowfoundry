@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -14,10 +15,9 @@ interface CaseStudyResultsProps {
 
 interface MetricCardProps {
   metric: CaseStudy['results']['quantifiedResults'][0]
-  index: number
 }
 
-function MetricCard({ metric, index }: MetricCardProps) {
+function MetricCard({ metric }: MetricCardProps) {
   const getIcon = (metricName: string) => {
     const name = metricName.toLowerCase()
     if (name.includes('cost') || name.includes('saving') || name.includes('roi')) {
@@ -116,7 +116,7 @@ export function CaseStudyResults({ results, className }: CaseStudyResultsProps) 
       {/* Quantified Results Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {results.quantifiedResults.map((metric, index) => (
-          <MetricCard key={index} metric={metric} index={index} />
+                          <MetricCard key={index} metric={metric} />
         ))}
       </div>
 
@@ -173,7 +173,7 @@ export function CaseStudyResults({ results, className }: CaseStudyResultsProps) 
               .map((feedback, index) => (
                 <div key={index} className="border-l-4 border-primary/20 pl-4 py-2">
                   <p className="text-foreground/80 italic">
-                    "{feedback}"
+                    &ldquo;{feedback}&rdquo;
                   </p>
                 </div>
               ))}
@@ -225,13 +225,13 @@ export function CaseStudyResults({ results, className }: CaseStudyResultsProps) 
           Ready to achieve similar results?
         </h3>
         <p className="text-muted-foreground mb-6">
-          Let's discuss how we can deliver measurable business impact for your organization.
+          Let&apos;s discuss how we can deliver measurable business impact for your organization.
         </p>
         <Button asChild size="lg" className="group">
-          <a href="/contact">
+          <Link href="/contact">
             Schedule Your Assessment
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </Button>
       </div>
     </section>

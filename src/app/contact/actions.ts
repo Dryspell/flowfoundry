@@ -38,6 +38,16 @@ const contactFormSchema = z.object({
   leadScore: z.string().optional()
 })
 
+// Infer the TypeScript type from the Zod schema
+type ContactFormData = z.infer<typeof contactFormSchema>
+
+// Type for processed form data with arrays
+type ProcessedContactFormData = Omit<ContactFormData, 'currentTech' | 'expectedOutcomes' | 'stakeholders'> & {
+  currentTech: string[]
+  expectedOutcomes: string[]
+  stakeholders: string[]
+}
+
 // Enhanced server action for comprehensive contact form submission
 export async function submitContactForm(formData: FormData) {
   try {
@@ -117,7 +127,7 @@ export async function submitContactForm(formData: FormData) {
 }
 
 // Generate a comprehensive lead summary
-function generateLeadSummary(data: Record<string, any>, leadScore: LeadScore | null): string {
+function generateLeadSummary(data: ProcessedContactFormData, leadScore: LeadScore | null): string {
   const parts = [
     `${data.companyName} (${data.industry}, ${data.companySize})`,
     `Challenge: ${data.primaryChallenge}`,
@@ -133,7 +143,7 @@ function generateLeadSummary(data: Record<string, any>, leadScore: LeadScore | n
 }
 
 // Placeholder for CRM integration
-async function createCRMLead(data: Record<string, any>, leadScore: LeadScore | null, priority: string) {
+async function createCRMLead(data: ProcessedContactFormData, leadScore: LeadScore | null, priority: string) {
   // TODO: Implement HubSpot/Salesforce integration
   console.warn('Creating CRM lead:', { data, leadScore, priority })
   
@@ -170,7 +180,7 @@ async function createCRMLead(data: Record<string, any>, leadScore: LeadScore | n
 }
 
 // Placeholder for notification emails
-async function sendNotificationEmails(_data: Record<string, any>, leadScore: LeadScore | null, priority: string) {
+async function sendNotificationEmails(_data: ProcessedContactFormData, leadScore: LeadScore | null, priority: string) {
   // TODO: Implement email notifications
   console.warn('Sending notification emails:', { priority, leadScore })
   
@@ -180,7 +190,7 @@ async function sendNotificationEmails(_data: Record<string, any>, leadScore: Lea
 }
 
 // Placeholder for team notifications
-async function sendTeamNotification(data: Record<string, any>, leadScore: LeadScore | null, priority: string) {
+async function sendTeamNotification(data: ProcessedContactFormData, leadScore: LeadScore | null, priority: string) {
   // TODO: Implement Slack/Teams integration
   console.warn('Sending team notification:', { 
     company: data.companyName,
@@ -207,7 +217,7 @@ async function sendTeamNotification(data: Record<string, any>, leadScore: LeadSc
 }
 
 // Placeholder for confirmation email
-async function sendConfirmationEmail(data: Record<string, any>) {
+async function sendConfirmationEmail(data: ProcessedContactFormData) {
   // TODO: Implement confirmation email
   console.warn('Sending confirmation email to:', data.email)
   

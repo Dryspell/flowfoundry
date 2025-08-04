@@ -14,7 +14,6 @@ export function ContactFormProgress({ currentStep, totalSteps, stepLabels }: Con
           const stepNumber = index + 1
           const isActive = stepNumber === currentStep
           const isCompleted = stepNumber < currentStep
-          const isUpcoming = stepNumber > currentStep
 
           return (
             <div key={label} className="flex items-center flex-1">

@@ -10,7 +10,6 @@ import {
   Calendar,
   PhoneCall,
   Video,
-  MessageSquare,
   Download,
   ExternalLink,
   Shield,

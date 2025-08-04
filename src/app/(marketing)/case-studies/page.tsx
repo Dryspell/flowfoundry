@@ -1,27 +1,32 @@
 import { Suspense } from 'react'
+import { CaseStudiesHero } from '@/components/case-studies/CaseStudiesHero'
+import { CaseStudiesGrid } from '@/components/case-studies/CaseStudiesGrid'
+import { CaseStudiesGridSkeleton } from '@/components/skeletons/CaseStudiesGridSkeleton'
+import { Metadata } from 'next'
 
-// Async Server Component for Case Studies listing
+export const metadata: Metadata = {
+  title: 'Case Studies - Real AI Transformation Results | Flowfoundry',
+  description: 'Discover how we\'ve helped businesses achieve 340% average ROI through AI-powered solutions. Real case studies with measurable business impact across manufacturing, retail, healthcare, and financial services.',
+  openGraph: {
+    title: 'Case Studies - Proven AI Transformations | Flowfoundry',
+    description: 'Real businesses, real results. See how our AI solutions delivered 340% ROI, 65% efficiency gains, and 98% client satisfaction.',
+    type: 'website',
+  },
+}
+
+// Server Component for Case Studies listing with comprehensive filtering and search
 export default async function CaseStudiesPage() {
-  // TODO: Add data fetching for case studies from Sanity
-
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="mb-8 text-4xl font-bold">Case Studies</h1>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <CaseStudiesHero />
 
-      <Suspense fallback={<div>Loading case studies...</div>}>
-        {/* TODO: Add case studies grid */}
-        <section>
-          <p className="mb-8 text-muted-foreground">
-            Coming soon: Comprehensive project documentation with before/after
-            metrics
-          </p>
-
-          {/* Placeholder for case studies grid */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* TODO: Replace with dynamic case study cards */}
-          </div>
-        </section>
-      </Suspense>
+      {/* Main Content */}
+      <div className="container mx-auto px-6 lg:px-8 py-16">
+        <Suspense fallback={<CaseStudiesGridSkeleton />}>
+          <CaseStudiesGrid />
+        </Suspense>
+      </div>
     </div>
   )
 }

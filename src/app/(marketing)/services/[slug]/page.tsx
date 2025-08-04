@@ -1,5 +1,7 @@
 import { Suspense } from 'react'
-// import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { ServiceDetail } from '@/components/marketing/ServiceDetail'
+import { getServiceBySlug, getAllServiceSlugs } from '@/lib/services-data'
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>
@@ -7,47 +9,30 @@ interface ServicePageProps {
 
 // Dynamic service pages with generateStaticParams
 export async function generateStaticParams() {
-  // TODO: Fetch service slugs from Sanity CMS
-  return [
-    { slug: 'ai-automation' },
-    { slug: 'multi-agent-systems' },
-    { slug: 'operational-optimization' },
-  ]
+  const slugs = getAllServiceSlugs()
+  return slugs.map((slug) => ({ slug }))
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params
-
-  // TODO: Fetch service data from Sanity based on slug
-  // const service = await getServiceBySlug(slug)
-  // if (!service) notFound()
+  
+  // Simulate async data fetching delay
+  await new Promise(resolve => setTimeout(resolve, 100))
+  
+  const service = getServiceBySlug(slug)
+  
+  if (!service) {
+    notFound()
+  }
 
   return (
-    <div className="container mx-auto py-8">
-      <Suspense fallback={<div>Loading service details...</div>}>
-        <h1 className="mb-8 text-4xl font-bold capitalize">
-          {slug.replace('-', ' ')} Service
-        </h1>
-
-        {/* TODO: Add comprehensive service content */}
-        <div className="prose max-w-none">
-          <p className="text-muted-foreground">
-            Coming soon: Detailed service description for {slug}
-          </p>
-        </div>
-
-        <Suspense fallback={<div>Loading related case studies...</div>}>
-          {/* TODO: Add related case studies section */}
-          <section className="mt-12">
-            <h2 className="mb-4 text-2xl font-semibold">
-              Related Case Studies
-            </h2>
-            <p className="text-muted-foreground">
-              Coming soon: Related case studies and client testimonials
-            </p>
-          </section>
-        </Suspense>
-      </Suspense>
-    </div>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" />
+        <p className="text-muted-foreground">Loading service details...</p>
+      </div>
+    </div>}>
+      <ServiceDetail service={service} />
+    </Suspense>
   )
 }

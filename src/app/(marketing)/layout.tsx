@@ -1,4 +1,6 @@
 import { Suspense } from 'react'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 
 export default function MarketingLayout({
   children,
@@ -7,15 +9,17 @@ export default function MarketingLayout({
 }) {
   return (
     <div className="min-h-screen bg-background">
-      {/* Marketing-specific layout structure */}
-      <Suspense fallback={<div>Loading header...</div>}>
-        {/* TODO: Add Header component */}
+      {/* Header with navigation */}
+      <Suspense fallback={<div className="h-16 bg-background border-b animate-pulse" />}>
+        <Header />
       </Suspense>
 
+      {/* Main content */}
       <main className="flex-1">{children}</main>
 
-      <Suspense fallback={<div>Loading footer...</div>}>
-        {/* TODO: Add Footer component */}
+      {/* Footer */}
+      <Suspense fallback={<div className="h-32 bg-muted/30 animate-pulse" />}>
+        <Footer />
       </Suspense>
     </div>
   )

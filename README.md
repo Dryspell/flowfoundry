@@ -28,6 +28,14 @@ This platform is designed to generate 50+ qualified leads per month, establish F
 - **Framer Motion** for professional animations and micro-interactions
 - **shadcn/ui** components for consistent UI patterns and accessibility
 
+### Testing & Quality Assurance
+- **Playwright** for comprehensive end-to-end testing across all browsers
+- **Visual Regression Testing** with automated screenshot comparison
+- **Cross-Browser Testing** for Chrome, Firefox, Safari, and Edge
+- **Mobile Device Testing** for responsive design validation
+- **Performance Testing** with Core Web Vitals monitoring
+- **Accessibility Testing** with automated WCAG compliance validation
+
 ### Content Management
 - **Sanity CMS** with custom schema architecture for flexible content
 - **GROQ queries** optimized for performance and complex data relationships
@@ -371,6 +379,17 @@ npm run lint           # ESLint checking
 npm run format         # Format with Prettier
 npm run type-check     # TypeScript validation
 
+# Testing commands
+npm run test           # Run all Playwright tests
+npm run test:headed    # Run tests with browser UI
+npm run test:ui        # Open Playwright test UI
+npm run test:debug     # Debug tests step by step
+npm run test:mobile    # Run mobile-specific tests
+npm run test:webkit    # Run Safari/WebKit tests
+npm run test:firefox   # Run Firefox tests
+npm run test:chromium  # Run Chrome tests
+npm run playwright:install # Install browser dependencies
+
 # Set up environment variables (when ready for integrations)
 cp .env.example .env.local
 
@@ -597,6 +616,70 @@ src/types/sanity.ts               # Extended with case study and contact form in
 - [ ] SEO meta tags implemented (Phase 4)
 - [ ] Social media sharing optimized (Phase 4)
 
+## Testing Strategy
+
+### Playwright E2E Testing
+This project uses **Playwright** for comprehensive end-to-end testing, ensuring all functionality works correctly across browsers and devices.
+
+#### Test Coverage
+- **Homepage Tests**: Hero section, services overview, social proof, and interactive elements
+- **Navigation Tests**: Header navigation, mobile menu, footer links, and cross-page routing
+- **About Page Tests**: Team profiles, mission section, and responsive design
+- **Services Tests**: Overview page, individual service pages, and pricing validation
+- **Case Studies Tests**: Filtering, search functionality, timeline interactions, and detail pages
+- **Contact Form Tests**: Multi-step form validation, lead scoring, server actions, and error handling
+- **Performance Tests**: Core Web Vitals, loading times, and accessibility compliance
+- **Mobile Tests**: Responsive design across devices and touch interactions
+- **Cross-Browser Tests**: Chrome, Firefox, Safari, and Edge compatibility
+
+#### Running Tests
+```bash
+# Install Playwright browsers (first time setup)
+npm run playwright:install
+
+# Run all tests
+npm run test
+
+# Run with browser UI visible
+npm run test:headed
+
+# Open interactive test UI
+npm run test:ui
+
+# Debug tests step by step
+npm run test:debug
+
+# Run specific browser tests
+npm run test:chromium
+npm run test:firefox
+npm run test:webkit
+
+# Run mobile device tests
+npm run test:mobile
+```
+
+#### Test Structure
+```
+tests/
+├── e2e/
+│   ├── homepage.spec.ts        # Homepage functionality
+│   ├── navigation.spec.ts      # Navigation and routing
+│   ├── about.spec.ts          # About page features
+│   ├── services.spec.ts       # Services pages
+│   ├── case-studies.spec.ts   # Case studies functionality
+│   ├── contact-form.spec.ts   # Multi-step contact form
+│   ├── mobile.spec.ts         # Mobile-specific tests
+│   └── performance.spec.ts    # Performance and accessibility
+├── visual/
+│   ├── homepage.spec.ts       # Visual regression tests
+│   ├── responsive.spec.ts     # Responsive design validation
+│   └── components.spec.ts     # Component visual tests
+└── utils/
+    ├── test-helpers.ts        # Shared test utilities
+    ├── mock-data.ts          # Test data and fixtures
+    └── page-objects.ts       # Page object models
+```
+
 ## Documentation
 
 - [Component Library](./docs/components.md)
@@ -605,6 +688,7 @@ src/types/sanity.ts               # Extended with case study and contact form in
 - [Security Best Practices](./docs/security.md)
 - [SEO Implementation](./docs/seo.md)
 - [Testing Strategy](./docs/testing.md)
+- [Playwright Testing Guide](./docs/playwright-testing.md)
 
 ## Contributing
 

@@ -8,7 +8,7 @@ interface ContactFormProgressProps {
 
 export function ContactFormProgress({ currentStep, totalSteps, stepLabels }: ContactFormProgressProps) {
   return (
-    <div className="w-full py-6">
+    <div data-testid="progress-indicator" className="w-full py-6">
       <div className="flex items-center justify-between">
         {stepLabels.map((label, index) => {
           const stepNumber = index + 1
@@ -20,6 +20,7 @@ export function ContactFormProgress({ currentStep, totalSteps, stepLabels }: Con
               {/* Step Circle */}
               <div className="relative flex items-center justify-center">
                 <div
+                  data-testid={`step-${stepNumber}`}
                   className={`
                     h-10 w-10 rounded-full border-2 flex items-center justify-center text-sm font-medium transition-all duration-300
                     ${isCompleted 

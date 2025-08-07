@@ -131,7 +131,7 @@ export class ContactFormPage {
     // Initialize form locators
     this.formContainer = page.locator('[data-testid="multi-step-form"]');
     this.progressIndicator = page.locator('[data-testid="progress-indicator"]');
-    this.stepIndicators = page.locator('[data-testid="step-indicator"]');
+    this.stepIndicators = page.locator('[data-testid^="step-"]');
     this.currentStep = page.locator('[data-testid="current-step"]');
     this.nextButton = page.locator('[data-testid="next-step"]');
     this.prevButton = page.locator('[data-testid="prev-step"]');
@@ -180,8 +180,14 @@ export class ContactFormPage {
   }
 
   async fillStep1(data: { primaryChallenge: string; urgency: string }): Promise<void> {
-    await this.primaryChallengeSelect.selectOption(data.primaryChallenge);
-    await this.urgencySelect.selectOption(data.urgency);
+    // Click challenge card
+    await this.page.locator(`[data-testid="challenge-${data.primaryChallenge}"]`).click();
+    await this.page.waitForTimeout(300);
+    
+    // Click urgency card
+    await this.page.locator(`[data-testid="urgency-${data.urgency}"]`).click();
+    await this.page.waitForTimeout(300);
+    
     await this.nextButton.click();
   }
 
@@ -195,10 +201,24 @@ export class ContactFormPage {
   }): Promise<void> {
     await this.companyNameInput.fill(data.companyName);
     await this.websiteInput.fill(data.website);
-    await this.industrySelect.selectOption(data.industry);
-    await this.companySizeSelect.selectOption(data.companySize);
+    
+    // Click industry dropdown to open it
+    await this.page.locator('[data-testid="industry-dropdown"]').click();
+    await this.page.waitForTimeout(300);
+    // Select industry from dropdown
+    await this.page.locator(`button:has-text("${data.industry}")`).first().click();
+    await this.page.waitForTimeout(300);
+    
+    // Click company size card
+    await this.page.locator(`[data-testid="company-size-${data.companySize}"]`).click();
+    await this.page.waitForTimeout(300);
+    
     await this.currentTechInput.fill(data.currentTech);
-    await this.aiExperienceSelect.selectOption(data.aiExperience);
+    
+    // Click AI experience card
+    await this.page.locator(`[data-testid="ai-experience-${data.aiExperience}"]`).click();
+    await this.page.waitForTimeout(300);
+    
     await this.nextButton.click();
   }
 
@@ -212,8 +232,15 @@ export class ContactFormPage {
   }): Promise<void> {
     await this.projectScopeTextarea.fill(data.projectScope);
     await this.expectedOutcomesInput.fill(data.expectedOutcomes);
-    await this.budgetRangeSelect.selectOption(data.budgetRange);
-    await this.timelineSelect.selectOption(data.timeline);
+    // Click budget range card
+    await this.page.locator(`[data-testid="budget-${data.budgetRange}"]`).click();
+    await this.page.waitForTimeout(300);
+    
+    // Timeline selection (if it's a card-based selection)
+    if (data.timeline) {
+      await this.page.locator(`[data-testid="timeline-${data.timeline}"]`).click();
+      await this.page.waitForTimeout(300);
+    }
     await this.decisionMakersInput.fill(data.decisionMakers);
     await this.stakeholdersInput.fill(data.stakeholders);
     await this.nextButton.click();
@@ -230,8 +257,17 @@ export class ContactFormPage {
     await this.contactNameInput.fill(data.contactName);
     await this.emailInput.fill(data.email);
     await this.phoneInput.fill(data.phone);
-    await this.preferredContactSelect.selectOption(data.preferredContact);
-    await this.consultationTimeSelect.selectOption(data.consultationTime);
+    // Click preferred contact method card (if applicable)
+    if (data.preferredContact) {
+      await this.page.locator(`[data-testid="contact-method-${data.preferredContact}"]`).click();
+      await this.page.waitForTimeout(300);
+    }
+    
+    // Click consultation time card (if applicable)
+    if (data.consultationTime) {
+      await this.page.locator(`[data-testid="consultation-time-${data.consultationTime}"]`).click();
+      await this.page.waitForTimeout(300);
+    }
     await this.specificQuestionsTextarea.fill(data.specificQuestions);
   }
 
@@ -328,28 +364,56 @@ export class CaseStudiesPage {
   }
 
   async filterByIndustry(industry: string): Promise<void> {
-    await this.industryFilter.selectOption(industry);
+    // First expand filters if needed
+    const filtersButton = this.page.locator('button:has-text("Filters")');
+    if (await filtersButton.isVisible()) {
+      await filtersButton.click();
+      await this.page.waitForTimeout(300);
+    }
+    
+    // Click the specific industry button
+    await this.page.locator(`[data-testid="industry-${industry}"]`).click();
     await this.page.waitForTimeout(500); // Allow filtering to complete
   }
 
   async filterByServiceType(serviceType: string): Promise<void> {
-    await this.serviceTypeFilter.selectOption(serviceType);
+    // First expand filters if needed
+    const filtersButton = this.page.locator('button:has-text("Filters")');
+    if (await filtersButton.isVisible()) {
+      await filtersButton.click();
+      await this.page.waitForTimeout(300);
+    }
+    
+    // Click the specific service type button
+    await this.page.locator(`[data-testid="service-type-${serviceType}"]`).click();
     await this.page.waitForTimeout(500);
   }
 
   async filterByROI(roiRange: string): Promise<void> {
-    await this.roiFilter.selectOption(roiRange);
+    // First expand filters if needed
+    const filtersButton = this.page.locator('button:has-text("Filters")');
+    if (await filtersButton.isVisible()) {
+      await filtersButton.click();
+      await this.page.waitForTimeout(300);
+    }
+    
+    // Click the specific ROI range button
+    await this.page.locator(`[data-testid="roi-${roiRange}"]`).click();
     await this.page.waitForTimeout(500);
   }
 
   async searchKeyword(keyword: string): Promise<void> {
     await this.searchInput.fill(keyword);
-    await this.searchButton.click();
+    // Search happens automatically on input change, no button click needed
     await this.page.waitForTimeout(500);
   }
 
   async clearAllFilters(): Promise<void> {
-    await this.clearFiltersButton.click();
+    // Clear filters button only appears when there are active filters
+    const clearButton = this.page.locator('[data-testid="clear-filters"]');
+    if (await clearButton.isVisible()) {
+      await clearButton.click();
+    }
     await this.page.waitForTimeout(500);
   }
 

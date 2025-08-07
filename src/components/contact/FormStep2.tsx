@@ -101,6 +101,7 @@ export function FormStep2({ formData, onUpdate, errors }: FormStep2Props) {
             <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               id="companyName"
+              data-testid="company-name"
               placeholder="Enter your company name"
               value={formData.companyName || ''}
               onChange={(e) => handleInputChange('companyName', e.target.value)}
@@ -123,6 +124,7 @@ export function FormStep2({ formData, onUpdate, errors }: FormStep2Props) {
             <Globe className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               id="website"
+              data-testid="company-website"
               placeholder="https://yourcompany.com"
               value={formData.website || ''}
               onChange={(e) => handleInputChange('website', e.target.value)}
@@ -137,6 +139,7 @@ export function FormStep2({ formData, onUpdate, errors }: FormStep2Props) {
         <Label className="text-base font-medium">Industry *</Label>
         <div className="mt-2 relative">
           <Button
+            data-testid="industry-dropdown"
             variant="outline"
             onClick={() => setShowIndustryDropdown(!showIndustryDropdown)}
             className={`w-full justify-between ${errors.industry ? 'border-red-500' : ''}`}
@@ -180,6 +183,7 @@ export function FormStep2({ formData, onUpdate, errors }: FormStep2Props) {
           {companySizes.map((size) => (
             <Card
               key={size.id}
+              data-testid={`company-size-${size.id}`}
               className={`cursor-pointer transition-all duration-200 hover:shadow-sm ${
                 formData.companySize === size.id
                   ? 'border-primary bg-primary/5'
@@ -293,6 +297,7 @@ export function FormStep2({ formData, onUpdate, errors }: FormStep2Props) {
           {aiExperienceOptions.map((option) => (
             <Card
               key={option.id}
+              data-testid={`ai-experience-${option.id}`}
               className={`cursor-pointer transition-all duration-200 hover:shadow-sm ${
                 formData.previousAIExperience === option.id
                   ? 'border-primary bg-primary/5'

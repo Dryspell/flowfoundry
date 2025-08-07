@@ -46,22 +46,22 @@ export interface CompleteFormData {
  */
 export const validContactFormData: CompleteFormData = {
   step1: {
-    primaryChallenge: 'operational-optimization',
-    urgency: 'within-3-months'
+    primaryChallenge: 'automate-processes',
+    urgency: 'soon'
   },
   step2: {
     companyName: 'TestCorp Manufacturing',
     website: 'https://testcorp.com',
-    industry: 'manufacturing',
-    companySize: '50-200',
+    industry: 'Manufacturing',
+    companySize: 'medium',
     currentTech: 'CRM, ERP, Basic Analytics',
-    aiExperience: 'some'
+    aiExperience: 'basic'
   },
   step3: {
     projectScope: 'We need to optimize our manufacturing processes to reduce waste and improve efficiency. Our current manual processes are causing bottlenecks and we believe AI can help automate key decision points.',
     expectedOutcomes: 'Increased efficiency by 25%, Cost reduction of $500K annually, Improved quality control',
     budgetRange: '100k-250k',
-    timeline: '6-12-months',
+    timeline: 'quarter',
     decisionMakers: 'CTO, Operations Director, VP Manufacturing',
     stakeholders: 'IT Team, Operations Team, Quality Control, Production Managers'
   },
@@ -70,7 +70,7 @@ export const validContactFormData: CompleteFormData = {
     email: 'john.smith@testcorp.com',
     phone: '+1-555-0123',
     preferredContact: 'email',
-    consultationTime: 'business-hours',
+    consultationTime: 'morning',
     specificQuestions: 'What is your typical project timeline? How do you handle data integration with existing ERP systems?'
   }
 };
@@ -80,22 +80,22 @@ export const validContactFormData: CompleteFormData = {
  */
 export const highValueLeadData: CompleteFormData = {
   step1: {
-    primaryChallenge: 'ai-transformation',
-    urgency: 'asap'
+    primaryChallenge: 'digital-transformation',
+    urgency: 'immediate'
   },
   step2: {
     companyName: 'Enterprise Solutions Inc',
     website: 'https://enterprisesolutions.com',
-    industry: 'technology',
-    companySize: '500+',
+    industry: 'Technology',
+    companySize: 'enterprise',
     currentTech: 'Advanced CRM, ERP, Cloud Infrastructure, Data Lakes',
     aiExperience: 'advanced'
   },
   step3: {
     projectScope: 'Full enterprise AI transformation across multiple departments including customer service, operations, and strategic planning. Looking for comprehensive AI implementation with custom solutions.',
     expectedOutcomes: 'Digital transformation, 40% efficiency gains, $2M annual savings, Competitive advantage',
-    budgetRange: '500k+',
-    timeline: '12-18-months',
+    budgetRange: 'over-500k',
+    timeline: 'flexible',
     decisionMakers: 'CEO, CTO, Chief Innovation Officer, Board of Directors',
     stakeholders: 'C-Suite, IT Department, All Business Units, External Consultants'
   },
@@ -237,31 +237,31 @@ export const invalidFormData = {
 export const caseStudyData = {
   expectedCaseStudies: [
     {
-      title: 'Manufacturing Automation Revolution',
+      title: 'Digital Manufacturing Platform: Quality Control System with AI Enhancement',
       industry: 'manufacturing',
       serviceType: 'operational-optimization',
-      roi: '340%',
+      roi: '$2.3M savings',
       slug: 'manufacturing-automation'
     },
     {
-      title: 'Retail Intelligence Transformation', 
+      title: 'E-commerce Platform Optimization: Inventory Management with Intelligent Forecasting', 
       industry: 'retail',
       serviceType: 'ai-transformation',
-      roi: '45%',
+      roi: '340% ROI',
       slug: 'retail-optimization'
     },
     {
-      title: 'Healthcare Workflow Optimization',
+      title: 'Healthcare Efficiency Revolution: AI-Powered Patient Flow Optimization',
       industry: 'healthcare',
       serviceType: 'operational-optimization', 
-      roi: '98%',
+      roi: 'Significant ROI',
       slug: 'healthcare-workflow'
     },
     {
-      title: 'Financial Risk Assessment AI',
-      industry: 'financial-services',
+      title: 'Financial Services Transformation: AI-Powered Risk Assessment and Compliance',
+      industry: 'financial',
       serviceType: 'custom-ai-solutions',
-      roi: '65%',
+      roi: 'Significant ROI',
       slug: 'financial-risk-assessment'
     }
   ],
@@ -270,35 +270,35 @@ export const caseStudyData = {
       filter: 'industry',
       value: 'manufacturing',
       expectedCount: 1,
-      expectedTitles: ['Manufacturing Automation Revolution']
+      expectedTitles: ['Digital Manufacturing Platform: Quality Control System with AI Enhancement']
     },
     {
       filter: 'serviceType', 
-      value: 'operational-optimization',
+      value: 'operational',
       expectedCount: 2,
-      expectedTitles: ['Manufacturing Automation Revolution', 'Healthcare Workflow Optimization']
+      expectedTitles: ['Digital Manufacturing Platform: Quality Control System with AI Enhancement', 'Healthcare Efficiency Revolution: AI-Powered Patient Flow Optimization']
     },
     {
       filter: 'roi',
-      value: 'over-200',
+      value: 'high',
       expectedCount: 1,
-      expectedTitles: ['Manufacturing Automation Revolution']
+      expectedTitles: ['E-commerce Platform Optimization: Inventory Management with Intelligent Forecasting']
     }
   ],
   searchTestCases: [
     {
-      keyword: 'automation',
+      keyword: 'manufacturing',
       expectedCount: 1,
-      expectedTitles: ['Manufacturing Automation Revolution']
+      expectedTitles: ['Digital Manufacturing Platform: Quality Control System with AI Enhancement']
     },
     {
       keyword: 'healthcare',
       expectedCount: 1,
-      expectedTitles: ['Healthcare Workflow Optimization']
+      expectedTitles: ['Healthcare Efficiency Revolution: AI-Powered Patient Flow Optimization']
     },
     {
-      keyword: 'efficiency',
-      expectedCount: 2, // Should match multiple case studies
+      keyword: 'optimization',
+      expectedCount: 3, // Should match multiple case studies
     }
   ]
 };

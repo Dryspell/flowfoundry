@@ -98,13 +98,14 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
                           featuredOnly
 
   return (
-    <div className="bg-card border border-border rounded-lg p-6 space-y-4">
+    <div data-testid="filter-section" className="bg-card border border-border rounded-lg p-6 space-y-4">
       {/* Header with Search and Toggle */}
       <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div className="flex-1 max-w-md">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
+              data-testid="search-input"
               placeholder="Search case studies..."
               value={searchQuery}
               onChange={(e) => handleFilterChange({ searchQuery: e.target.value })}
@@ -137,6 +138,7 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
       {/* Quick Filters - Always Visible */}
       <div className="flex flex-wrap gap-2">
         <Button
+          data-testid="featured-filter"
           variant={featuredOnly ? "default" : "outline"}
           size="sm"
           onClick={() => handleFilterChange({ featuredOnly: !featuredOnly })}
@@ -148,6 +150,7 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
         
         {hasActiveFilters && (
           <Button
+            data-testid="clear-filters"
             variant="ghost"
             size="sm"
             onClick={clearAllFilters}
@@ -163,7 +166,7 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
       {isExpanded && (
         <div className="pt-4 border-t space-y-6">
           {/* Industry Filter */}
-          <div>
+          <div data-testid="industry-filter">
             <div className="flex items-center gap-2 mb-3">
               <Building className="h-4 w-4 text-muted-foreground" />
               <label className="text-sm font-medium">Industry</label>
@@ -172,6 +175,7 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
               {industries.map((industry) => (
                 <Button
                   key={industry.value}
+                  data-testid={`industry-${industry.value}`}
                   variant={selectedIndustry === industry.value ? "default" : "outline"}
                   size="sm"
                   onClick={() => handleFilterChange({ industry: industry.value })}
@@ -184,7 +188,7 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
           </div>
 
           {/* Service Type Filter */}
-          <div>
+          <div data-testid="service-type-filter">
             <div className="flex items-center gap-2 mb-3">
               <Cog className="h-4 w-4 text-muted-foreground" />
               <label className="text-sm font-medium">Service Type</label>
@@ -193,6 +197,7 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
               {serviceTypes.map((serviceType) => (
                 <Button
                   key={serviceType.value}
+                  data-testid={`service-type-${serviceType.value}`}
                   variant={selectedServiceType === serviceType.value ? "default" : "outline"}
                   size="sm"
                   onClick={() => handleFilterChange({ serviceType: serviceType.value })}
@@ -205,7 +210,7 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
           </div>
 
           {/* Results Range Filter */}
-          <div>
+          <div data-testid="roi-filter">
             <div className="flex items-center gap-2 mb-3">
               <TrendingUp className="h-4 w-4 text-muted-foreground" />
               <label className="text-sm font-medium">Results Impact</label>
@@ -214,6 +219,7 @@ export function CaseStudyFilters({ onFilterChange, totalCount, filteredCount }: 
               {resultsRanges.map((resultsRange) => (
                 <Button
                   key={resultsRange.value}
+                  data-testid={`roi-${resultsRange.value}`}
                   variant={selectedResultsRange === resultsRange.value ? "default" : "outline"}
                   size="sm"
                   onClick={() => handleFilterChange({ resultsRange: resultsRange.value })}

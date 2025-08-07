@@ -12,7 +12,7 @@ interface CaseStudyCardProps {
 
 export function CaseStudyCard({ caseStudy, className }: CaseStudyCardProps) {
   return (
-    <Card className={`group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/20 ${className}`}>
+    <Card data-testid="case-study-card" className={`group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/20 ${className}`}>
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1">

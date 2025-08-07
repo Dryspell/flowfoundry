@@ -111,7 +111,7 @@ export function CaseStudiesGrid({ className }: CaseStudiesGridProps) {
   }
 
   return (
-    <div className={`space-y-8 ${className}`}>
+    <div data-testid="case-studies-grid" className={`space-y-8 ${className}`}>
       {/* Filters */}
       <CaseStudyFilters
         onFilterChange={setFilters}
@@ -121,7 +121,7 @@ export function CaseStudiesGrid({ className }: CaseStudiesGridProps) {
 
       {/* Sort Controls */}
       <div className="flex items-center justify-between">
-        <div className="text-sm text-muted-foreground">
+        <div data-testid="results-count" className="text-sm text-muted-foreground">
           {finalCaseStudies.length === 0 ? (
             'No case studies found matching your criteria'
           ) : (

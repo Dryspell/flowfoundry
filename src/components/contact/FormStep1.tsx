@@ -123,7 +123,7 @@ export function FormStep1({ formData, onUpdate, errors }: FormStep1Props) {
         </p>
         
         {errors.primaryChallenge && (
-          <div className="text-red-600 text-sm mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
+          <div data-testid="validation-error" className="text-red-600 text-sm mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
             {errors.primaryChallenge}
           </div>
         )}
@@ -132,6 +132,7 @@ export function FormStep1({ formData, onUpdate, errors }: FormStep1Props) {
           {challenges.map((challenge) => (
             <Card 
               key={challenge.id}
+              data-testid={`challenge-${challenge.id}`}
               className={`cursor-pointer transition-all duration-200 hover:shadow-md ${
                 formData.primaryChallenge === challenge.id 
                   ? 'border-primary bg-primary/5' 
@@ -187,7 +188,7 @@ export function FormStep1({ formData, onUpdate, errors }: FormStep1Props) {
         </p>
 
         {errors.urgency && (
-          <div className="text-red-600 text-sm mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
+          <div data-testid="validation-error" className="text-red-600 text-sm mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
             {errors.urgency}
           </div>
         )}
@@ -196,6 +197,7 @@ export function FormStep1({ formData, onUpdate, errors }: FormStep1Props) {
           {urgencyOptions.map((option) => (
             <Card
               key={option.id}
+              data-testid={`urgency-${option.id}`}
               className={`cursor-pointer transition-all duration-200 hover:shadow-sm ${
                 formData.urgency === option.id
                   ? `border-primary ${option.color}`

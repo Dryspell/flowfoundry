@@ -71,6 +71,7 @@ export function FormStep4({ formData, onUpdate, errors }: FormStep4Props) {
               <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 id="contactName"
+                data-testid="contact-name"
                 placeholder="Enter your full name"
                 value={formData.contactName || ''}
                 onChange={(e) => handleInputChange('contactName', e.target.value)}
@@ -93,6 +94,7 @@ export function FormStep4({ formData, onUpdate, errors }: FormStep4Props) {
               <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 id="email"
+                data-testid="contact-email"
                 type="email"
                 placeholder="your.email@company.com"
                 value={formData.email || ''}
@@ -116,6 +118,7 @@ export function FormStep4({ formData, onUpdate, errors }: FormStep4Props) {
               <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 id="phone"
+                data-testid="contact-phone"
                 type="tel"
                 placeholder="(555) 123-4567"
                 value={formData.phone || ''}
@@ -138,6 +141,7 @@ export function FormStep4({ formData, onUpdate, errors }: FormStep4Props) {
           {contactMethods.map((method) => (
             <Card
               key={method.id}
+              data-testid={`contact-method-${method.id}`}
               className={`cursor-pointer transition-all duration-200 hover:shadow-sm ${
                 formData.preferredContact === method.id
                   ? 'border-primary bg-primary/5'
@@ -179,6 +183,7 @@ export function FormStep4({ formData, onUpdate, errors }: FormStep4Props) {
           {consultationTimes.map((time) => (
             <Card
               key={time.id}
+              data-testid={`consultation-time-${time.id}`}
               className={`cursor-pointer transition-all duration-200 hover:shadow-sm ${
                 formData.consultationTime === time.id
                   ? 'border-primary bg-primary/5'
@@ -219,6 +224,7 @@ export function FormStep4({ formData, onUpdate, errors }: FormStep4Props) {
         <div className="relative">
           <Textarea
             id="specificQuestions"
+            data-testid="specific-questions"
             placeholder="Example: We're particularly interested in ROI projections, integration with our existing ERP system, and implementation timeline. Are there any similar clients in our industry you've worked with?"
             value={formData.specificQuestions || ''}
             onChange={(e) => handleInputChange('specificQuestions', e.target.value)}

@@ -114,6 +114,7 @@ export function FormStep3({ formData, onUpdate, errors }: FormStep3Props) {
         <div className="relative">
           <Textarea
             id="projectScope"
+            data-testid="project-scope"
             placeholder="Example: We need to automate our invoice processing system. Currently, our team manually processes 500+ invoices monthly, taking 2-3 hours per day. We want to reduce processing time by 80% and improve accuracy..."
             value={formData.projectScope || ''}
             onChange={(e) => handleInputChange('projectScope', e.target.value)}
@@ -213,6 +214,7 @@ export function FormStep3({ formData, onUpdate, errors }: FormStep3Props) {
           {budgetRanges.map((budget) => (
             <Card
               key={budget.id}
+              data-testid={`budget-${budget.id}`}
               className={`cursor-pointer transition-all duration-200 hover:shadow-sm ${
                 formData.budgetRange === budget.id
                   ? 'border-primary bg-primary/5'
@@ -253,6 +255,7 @@ export function FormStep3({ formData, onUpdate, errors }: FormStep3Props) {
           {timelineOptions.map((option) => (
             <Card
               key={option.id}
+              data-testid={`timeline-${option.id}`}
               className={`cursor-pointer transition-all duration-200 hover:shadow-sm ${
                 formData.timeline === option.id
                   ? 'border-primary bg-primary/5'
@@ -293,6 +296,7 @@ export function FormStep3({ formData, onUpdate, errors }: FormStep3Props) {
         </p>
         <Textarea
           id="decisionMakers"
+          data-testid="decision-makers"
           placeholder="Example: Final decision will be made by CEO and CTO, with input from the operations team. We typically evaluate 2-3 vendors before making a decision..."
           value={formData.decisionMakers || ''}
           onChange={(e) => handleInputChange('decisionMakers', e.target.value)}

@@ -267,7 +267,7 @@ export function MultiStepForm({ className }: MultiStepFormProps) {
 
   if (isSubmitted) {
     return (
-      <Card className="max-w-2xl mx-auto">
+      <Card data-testid="form-success" className="max-w-2xl mx-auto">
         <CardContent className="p-8 text-center">
           <div className="space-y-6">
             <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center mx-auto">
@@ -306,7 +306,7 @@ export function MultiStepForm({ className }: MultiStepFormProps) {
   }
 
   return (
-    <div className={className}>
+    <div data-testid="multi-step-form" className={className}>
       <Card className="max-w-4xl mx-auto">
         <CardContent className="p-8">
           {/* Progress Indicator */}
@@ -323,7 +323,7 @@ export function MultiStepForm({ className }: MultiStepFormProps) {
 
           {/* Form Errors */}
           {formState.errors.submit && (
-            <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-md">
+            <div data-testid="submission-error" className="mt-6 p-4 bg-red-50 border border-red-200 rounded-md">
               <p className="text-red-600 text-sm">{formState.errors.submit}</p>
             </div>
           )}
@@ -331,6 +331,7 @@ export function MultiStepForm({ className }: MultiStepFormProps) {
           {/* Navigation Buttons */}
           <div className="flex justify-between items-center mt-8 pt-6 border-t">
             <Button
+              data-testid="prev-step"
               variant="outline"
               onClick={handlePrevious}
               disabled={formState.currentStep === 1 || formState.isSubmitting}
@@ -340,12 +341,13 @@ export function MultiStepForm({ className }: MultiStepFormProps) {
               Previous
             </Button>
 
-            <div className="text-sm text-muted-foreground">
+            <div data-testid="current-step" className="text-sm text-muted-foreground">
               Step {formState.currentStep} of {TOTAL_STEPS}
             </div>
 
             {formState.currentStep === TOTAL_STEPS ? (
               <Button
+                data-testid="submit-form"
                 onClick={handleSubmit}
                 disabled={formState.isSubmitting || isPending}
                 className="flex items-center gap-2"
@@ -364,6 +366,7 @@ export function MultiStepForm({ className }: MultiStepFormProps) {
               </Button>
             ) : (
               <Button
+                data-testid="next-step"
                 onClick={handleNext}
                 disabled={formState.isSubmitting}
                 className="flex items-center gap-2"

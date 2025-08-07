@@ -6,7 +6,7 @@ const companyValues = [
   {
     icon: Target,
     title: 'Results-Driven',
-    description: 'Every web solution we build is designed to deliver measurable business outcomes and ROI.'
+    description: 'Every AI solution we build is designed to deliver measurable business outcomes and ROI.'
   },
   {
     icon: Heart,
@@ -16,7 +16,7 @@ const companyValues = [
   {
     icon: TrendingUp,
     title: 'Innovation',
-    description: 'We stay at the forefront of web technology and modern development practices to provide cutting-edge solutions.'
+    description: 'We stay at the forefront of AI technology to provide cutting-edge solutions.'
   },
   {
     icon: Users,
@@ -42,12 +42,12 @@ export function MissionSection() {
             <Target className="h-6 w-6 text-primary" />
             <Badge variant="outline">Our Mission</Badge>
           </div>
-          <h2 className="text-2xl font-bold mb-4">Modern Web Technology for Every Business</h2>
+          <h2 className="text-2xl font-bold mb-4">Democratizing AI for Business</h2>
           <p className="text-muted-foreground leading-relaxed">
-            We believe every business, regardless of size, should have access to modern web technology 
-            and digital solutions. Our mission is to make enterprise-level web development and technology 
-            consulting accessible and practical for small to mid-sized companies, helping them compete and 
-            thrive in a digital-first economy.
+            We believe every business, regardless of size, should have access to the transformative 
+            power of AI. Our mission is to make enterprise-level AI solutions accessible and 
+            practical for small to mid-sized companies, helping them compete and thrive in an 
+            AI-driven economy.
           </p>
         </div>
 
@@ -56,11 +56,11 @@ export function MissionSection() {
             <Eye className="h-6 w-6 text-primary" />
             <Badge variant="outline">Our Vision</Badge>
           </div>
-          <h2 className="text-2xl font-bold mb-4">Technology-Powered Future for All</h2>
+          <h2 className="text-2xl font-bold mb-4">AI-Powered Future for All</h2>
           <p className="text-muted-foreground leading-relaxed">
-            We envision a future where modern web technology amplifies business capabilities across every industry. 
-            By 2030, we aim to be the leading technology consultancy for SMBs, having helped over 1,000 
-            companies achieve breakthrough results through web development, digital transformation, and intelligent automation.
+            We envision a future where AI amplifies human capabilities across every industry. 
+            By 2030, we aim to be the leading AI consultancy for SMBs, having helped over 1,000 
+            companies achieve breakthrough results through intelligent automation and optimization.
           </p>
         </div>
       </div>
@@ -70,21 +70,21 @@ export function MissionSection() {
         <h2 className="text-2xl font-bold mb-6 text-center">Our Story</h2>
         <div className="max-w-4xl mx-auto space-y-6 text-muted-foreground">
           <p className="leading-relaxed">
-            Founded in 2020 by a team of web developers and technology consultants, 
-            Flowfoundry emerged from a simple observation: while large enterprises had access to 
-            top-tier web development and technology consulting, small and mid-sized businesses were 
-            being left behind due to complexity, cost, and lack of specialized expertise.
+            Founded in 2020 by a team of AI researchers and business transformation experts, 
+            Flowfoundry emerged from a simple observation: while large enterprises were rapidly 
+            adopting AI, small and mid-sized businesses were being left behind due to complexity, 
+            cost, and lack of specialized expertise.
           </p>
           <p className="leading-relaxed">
-            Our founders, with combined experience of over 40 years in web development, system architecture, 
-            and technology consulting, recognized the opportunity to bridge this gap. 
-            We started with a commitment to make modern web technology accessible, practical, and profitable for 
+            Our founders, with combined experience of over 40 years in AI research, enterprise 
+            consulting, and startup scaling, recognized the opportunity to bridge this gap. 
+            We started with a commitment to make AI accessible, practical, and profitable for 
             businesses that form the backbone of the global economy.
           </p>
           <p className="leading-relaxed">
-            Today, we&apos;ve helped over 150 companies transform their digital presence, achieve an 
-            average ROI of 340%, and future-proof their businesses with modern technology. Our approach combines 
-            cutting-edge web development with deep business understanding, ensuring every solution we 
+            Today, we&apos;ve helped over 150 companies transform their operations, achieve an 
+            average ROI of 340%, and future-proof their businesses with AI. Our approach combines 
+            cutting-edge technology with deep business understanding, ensuring every solution we 
             build drives real, measurable results.
           </p>
         </div>

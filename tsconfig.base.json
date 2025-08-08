@@ -49,6 +49,9 @@
   ],
   "exclude": [
     "node_modules",
-    ".next"
+    ".next",
+    "apps/**/tests/**",
+    "apps/**/playwright-report/**",
+    "apps/**/test-results/**"
   ]
 }

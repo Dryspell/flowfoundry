@@ -36,7 +36,11 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "tests/**",
+    "playwright-report/**",
+    "test-results/**",
+    "playwright/**"
   ],
   "extends": "../../tsconfig.base.json"
 }

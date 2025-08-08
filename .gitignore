@@ -14,6 +14,14 @@
 /coverage
 
 # playwright
+# Legacy root locations (pre-monorepo)
+/playwright-report/
+/test-results/
+/playwright/.auth/
+/playwright/
+/tests/**/*-snapshots/
+
+# New app locations (apps/web)
 /apps/web/playwright-report/
 /apps/web/test-results/
 /apps/web/playwright/.auth/
@@ -22,6 +30,10 @@
 # next.js
 /.next/
 /out/
+
+# Next.js (apps/web)
+/apps/web/.next/
+/apps/web/out/
 
 # production
 /build

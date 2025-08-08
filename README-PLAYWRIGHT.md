@@ -1,8 +1,8 @@
-# Playwright Testing Suite for Flowfoundry
+# Playwright Testing Suite for Stratalace
 
 ## Overview
 
-This comprehensive Playwright testing suite provides enterprise-grade testing coverage for the Flowfoundry AI consultancy platform. The suite focuses on the critical business objective of generating 50+ qualified leads per month with a 5%+ conversion rate.
+This comprehensive Playwright testing suite provides enterprise-grade testing coverage for the Stratalace AI consultancy platform. The suite focuses on the critical business objective of generating 50+ qualified leads per month with a 5%+ conversion rate.
 
 ## Test Coverage
 

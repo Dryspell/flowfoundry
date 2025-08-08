@@ -1,4 +1,4 @@
-// Comprehensive case studies data for Flowfoundry
+// Comprehensive case studies data for Stratalace
 // Based on Phase 3 requirements with detailed case study schema
 
 export interface CaseStudyPreview {
@@ -389,12 +389,12 @@ export const caseStudiesData: CaseStudy[] = [
       ]
     },
     testimonial: {
-      quote: "Flowfoundry's AI system didn't just improve our quality control - it transformed our entire manufacturing operation. We're now catching defects we never would have found manually, and our production efficiency has increased by 40%. The $2.3M in annual savings exceeded our expectations.",
+      quote: "Stratalace's AI system didn't just improve our quality control - it transformed our entire manufacturing operation. We're now catching defects we never would have found manually, and our production efficiency has increased by 40%. The $2.3M in annual savings exceeded our expectations.",
       author: "Sarah Johnson",
       authorRole: "Director of Operations",
       authorImage: "/images/testimonials/sarah-johnson.jpg",
       company: "TechManufacturing Inc.",
-      fullReview: "When we first contacted Flowfoundry, our quality control was a major bottleneck. Manual inspections were slow, inconsistent, and missing critical defects. The team didn't just implement an AI solution - they completely reimagined our quality process. The multi-agent system they built coordinates between different inspection stations, provides real-time feedback to operators, and even predicts potential quality issues before they occur. Our defect rate dropped from 15% to 6%, and we're saving over $2M annually. Most importantly, our customers have noticed the improvement in quality, and we've been able to take on higher-value contracts as a result."
+      fullReview: "When we first contacted Stratalace, our quality control was a major bottleneck. Manual inspections were slow, inconsistent, and missing critical defects. The team didn't just implement an AI solution - they completely reimagined our quality process. The multi-agent system they built coordinates between different inspection stations, provides real-time feedback to operators, and even predicts potential quality issues before they occur. Our defect rate dropped from 15% to 6%, and we're saving over $2M annually. Most importantly, our customers have noticed the improvement in quality, and we've been able to take on higher-value contracts as a result."
     },
     relatedServices: ["multi-agent-systems", "operational-optimization", "ai-transformation"],
     relatedCaseStudies: ["retail-optimization", "healthcare-workflow"],
@@ -680,12 +680,12 @@ export const caseStudiesData: CaseStudy[] = [
       ]
     },
     testimonial: {
-      quote: "The AI inventory optimization system from Flowfoundry has revolutionized our operations. We've reduced our inventory by 30% while virtually eliminating stockouts. Our stock turns increased by 25%, and we achieved 340% ROI in just 8 months. It's been transformational for our business.",
+      quote: "The AI inventory optimization system from Stratalace has revolutionized our operations. We've reduced our inventory by 30% while virtually eliminating stockouts. Our stock turns increased by 25%, and we achieved 340% ROI in just 8 months. It's been transformational for our business.",
       author: "Michael Chen",
       authorRole: "VP of Operations",
       authorImage: "/images/testimonials/michael-chen.jpg",
       company: "Retail Dynamics",
-      fullReview: "Before working with Flowfoundry, our inventory management was a constant struggle. We were either overstocked on items that wouldn't sell or running out of our best sellers. The AI system they built doesn't just predict demand - it optimizes our entire inventory strategy. The system automatically adjusts orders based on seasonal trends, promotional activities, and even local events. Our inventory levels dropped by 30%, but our product availability actually improved. We're saving over $1M annually just in reduced carrying costs, and our customers are happier because we always have what they want in stock."
+      fullReview: "Before working with Stratalace, our inventory management was a constant struggle. We were either overstocked on items that wouldn't sell or running out of our best sellers. The AI system they built doesn't just predict demand - it optimizes our entire inventory strategy. The system automatically adjusts orders based on seasonal trends, promotional activities, and even local events. Our inventory levels dropped by 30%, but our product availability actually improved. We're saving over $1M annually just in reduced carrying costs, and our customers are happier because we always have what they want in stock."
     },
     relatedServices: ["operational-optimization", "predictive-analytics", "custom-solutions"],
     relatedCaseStudies: ["manufacturing-automation", "financial-risk-assessment"],
@@ -971,12 +971,12 @@ export const caseStudiesData: CaseStudy[] = [
       ]
     },
     testimonial: {
-      quote: "Flowfoundry's intelligent scheduling system has revolutionized our patient care delivery. We've cut wait times in half, increased our patient throughput by 35%, and our staff satisfaction has soared. The system pays for itself through improved efficiency alone.",
+      quote: "Stratalace's intelligent scheduling system has revolutionized our patient care delivery. We've cut wait times in half, increased our patient throughput by 35%, and our staff satisfaction has soared. The system pays for itself through improved efficiency alone.",
       author: "Dr. Jennifer Williams",
       authorRole: "Chief Medical Officer",
       authorImage: "/images/testimonials/jennifer-williams.jpg",
       company: "HealthTech Solutions",
-      fullReview: "When we first implemented Flowfoundry's AI scheduling system, I was skeptical about how well technology could handle the complexities of healthcare workflows. But the results have been extraordinary. The system doesn't just schedule appointments - it optimizes our entire patient flow. It predicts when we'll have capacity issues, automatically adjusts schedules when emergencies arise, and even helps us identify opportunities to improve our processes. Our patients are happier, our staff is more satisfied, and we're providing better care to more people. It's exactly what healthcare technology should be."
+      fullReview: "When we first implemented Stratalace's AI scheduling system, I was skeptical about how well technology could handle the complexities of healthcare workflows. But the results have been extraordinary. The system doesn't just schedule appointments - it optimizes our entire patient flow. It predicts when we'll have capacity issues, automatically adjusts schedules when emergencies arise, and even helps us identify opportunities to improve our processes. Our patients are happier, our staff is more satisfied, and we're providing better care to more people. It's exactly what healthcare technology should be."
     },
     relatedServices: ["ai-transformation", "operational-optimization", "custom-solutions"],
     relatedCaseStudies: ["manufacturing-automation", "retail-optimization"],
@@ -1262,12 +1262,12 @@ export const caseStudiesData: CaseStudy[] = [
       ]
     },
     testimonial: {
-      quote: "Flowfoundry's AI risk assessment system has revolutionized our entire lending operation. We've reduced loan processing time from days to hours while improving accuracy by 90%. The system pays for itself through improved efficiency and reduced operational costs alone.",
+      quote: "Stratalace's AI risk assessment system has revolutionized our entire lending operation. We've reduced loan processing time from days to hours while improving accuracy by 90%. The system pays for itself through improved efficiency and reduced operational costs alone.",
       author: "Robert Martinez",
       authorRole: "Chief Risk Officer",
       authorImage: "/images/testimonials/robert-martinez.jpg",
       company: "Financial Services Corp",
-      fullReview: "The transformation that Flowfoundry delivered to our risk assessment and compliance processes has been remarkable. What used to take our team 5-7 days of manual analysis now happens in 6-8 hours with greater accuracy. The AI system doesn't just speed up our processes - it makes them better. Risk assessments are more consistent, compliance monitoring is automated, and our customers get faster service. We're processing 40% more loan applications with the same staff, and our risk performance has actually improved. It's given us a significant competitive advantage in the market."
+      fullReview: "The transformation that Stratalace delivered to our risk assessment and compliance processes has been remarkable. What used to take our team 5-7 days of manual analysis now happens in 6-8 hours with greater accuracy. The AI system doesn't just speed up our processes - it makes them better. Risk assessments are more consistent, compliance monitoring is automated, and our customers get faster service. We're processing 40% more loan applications with the same staff, and our risk performance has actually improved. It's given us a significant competitive advantage in the market."
     },
     relatedServices: ["custom-solutions", "ai-transformation", "operational-optimization"],
     relatedCaseStudies: ["manufacturing-automation", "healthcare-workflow"],

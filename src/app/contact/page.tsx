@@ -9,7 +9,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, MessageSquare, Clock, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact FlowFoundry - Free AI Consultation & Custom ROI Analysis',
+  title: 'Contact Stratalace - Free AI Consultation & Custom ROI Analysis',
   description: 'Start your digital transformation journey today. Get a free consultation, custom ROI analysis, and detailed project proposal. 2-hour response time. 340% average ROI proven results.',
   keywords: [
     'free AI consultation',
@@ -24,27 +24,27 @@ export const metadata: Metadata = {
     'AI consultation services'
   ],
   openGraph: {
-    title: 'Contact FlowFoundry - Free AI Consultation & Custom ROI Analysis',
+    title: 'Contact Stratalace - Free AI Consultation & Custom ROI Analysis',
     description: 'Start your digital transformation journey. Free consultation, custom ROI analysis, and detailed project proposal. 2-hour response guaranteed.',
-    url: 'https://flowfoundry.ai/contact',
+    url: 'https://stratalace.com/contact',
     images: [
       {
         url: '/og-image-contact.png',
         width: 1200,
         height: 630,
-        alt: 'Contact FlowFoundry - Free AI Consultation',
+        alt: 'Contact Stratalace - Free AI Consultation',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact FlowFoundry - Free AI Consultation & Custom ROI Analysis',
+    title: 'Contact Stratalace - Free AI Consultation & Custom ROI Analysis',
     description: 'Start your digital transformation journey. Free consultation, custom ROI analysis, and detailed project proposal. 2-hour response guaranteed.',
     images: ['/og-image-contact.png'],
   },
   alternates: {
-    canonical: 'https://flowfoundry.ai/contact',
+    canonical: 'https://stratalace.com/contact',
   },
 }
 
@@ -55,19 +55,19 @@ export default function ContactPage() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": "https://flowfoundry.ai/contact#contactpage",
-        "url": "https://flowfoundry.ai/contact",
-        "name": "Contact FlowFoundry",
-        "description": "Get a free AI consultation, custom ROI analysis, and detailed project proposal from FlowFoundry's AI experts.",
+        "@id": "https://stratalace.com/contact#contactpage",
+        "url": "https://stratalace.com/contact",
+        "name": "Contact Stratalace",
+        "description": "Get a free AI consultation, custom ROI analysis, and detailed project proposal from Stratalace's AI experts.",
         "mainEntity": {
-          "@id": "https://flowfoundry.ai/#organization"
+          "@id": "https://stratalace.com/#organization"
         }
       },
       {
         "@type": "ContactPoint",
-        "@id": "https://flowfoundry.ai/contact#contactpoint",
+        "@id": "https://stratalace.com/contact#contactpoint",
         "contactType": "customer service",
-        "email": "hello@flowfoundry.ai",
+        "email": "hello@stratalace.com",
         "availableLanguage": "English",
         "areaServed": ["United States", "Canada", "Europe"],
         "serviceArea": {
@@ -82,13 +82,13 @@ export default function ContactPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://flowfoundry.ai/contact#breadcrumb",
+        "@id": "https://stratalace.com/contact#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "item": {
-              "@id": "https://flowfoundry.ai",
+              "@id": "https://stratalace.com",
               "name": "Home"
             }
           },
@@ -96,7 +96,7 @@ export default function ContactPage() {
             "@type": "ListItem",
             "position": 2,
             "item": {
-              "@id": "https://flowfoundry.ai/contact",
+              "@id": "https://stratalace.com/contact",
               "name": "Contact"
             }
           }
@@ -199,7 +199,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Why Choose Flowfoundry?</h2>
+              <h2 className="text-3xl font-bold mb-4">Why Choose Stratalace?</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 We&apos;re not just another AI consultancy. We&apos;re your long-term partners in transformation.
               </p>

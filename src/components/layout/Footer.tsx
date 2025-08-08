@@ -48,7 +48,7 @@ export function Footer() {
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
                   <Zap className="h-5 w-5 text-primary-foreground" />
                 </div>
-                <span className="text-xl font-bold">Flowfoundry</span>
+                <span className="text-xl font-bold">Stratalace</span>
               </Link>
               
               <p className="text-muted-foreground text-sm max-w-md mb-6">
@@ -60,7 +60,7 @@ export function Footer() {
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4" />
-                  <span>hello@flowfoundry.ai</span>
+                  <span>hello@stratalace.com</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
@@ -168,7 +168,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © 2024 Flowfoundry. All rights reserved.
+            © 2024 Stratalace. All rights reserved.
           </div>
           
           <div className="flex space-x-6">

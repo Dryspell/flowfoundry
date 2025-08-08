@@ -1,5 +1,5 @@
 /**
- * Test data and fixtures for Flowfoundry Playwright tests
+ * Test data and fixtures for Stratalace Playwright tests
  */
 
 export interface Step1Data {
@@ -363,7 +363,7 @@ export const leadScoringTestCases = [
  * Navigation test data
  */
 export const navigationTestCases = [
-  { page: 'Home', path: '/', expectedTitle: 'Flowfoundry' },
+  { page: 'Home', path: '/', expectedTitle: 'Stratalace' },
   { page: 'About', path: '/about', expectedTitle: 'About' },
   { page: 'Services', path: '/services', expectedTitle: 'Services' },
   { page: 'Case Studies', path: '/case-studies', expectedTitle: 'Case Studies' },

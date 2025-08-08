@@ -1,4 +1,4 @@
-# Flowfoundry AI Consultancy Platform - Development Todos
+# Stratalace AI Consultancy Platform - Development Todos
 
 ## Project Progress Overview
 

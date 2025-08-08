@@ -23,27 +23,27 @@ export const metadata: Metadata = {
     'custom AI solutions'
   ],
   openGraph: {
-    title: 'Technology Consultancy & Web Development Solutions - FlowFoundry',
+    title: 'Technology Consultancy & Web Development Solutions - Stratalace',
     description: 'Transform your business with AI-powered solutions. 340% average ROI, proven results across industries. Free consultation available.',
-    url: 'https://flowfoundry.ai',
+    url: 'https://stratalace.com',
     images: [
       {
         url: '/og-image-homepage.png',
         width: 1200,
         height: 630,
-        alt: 'FlowFoundry AI Transformation Solutions - 340% Average ROI',
+        alt: 'Stratalace AI Transformation Solutions - 340% Average ROI',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Technology Consultancy & Web Development Solutions - FlowFoundry',
+    title: 'Technology Consultancy & Web Development Solutions - Stratalace',
     description: 'Transform your business with AI-powered solutions. 340% average ROI, proven results across industries. Free consultation available.',
     images: ['/og-image-homepage.png'],
   },
   alternates: {
-    canonical: 'https://flowfoundry.ai',
+    canonical: 'https://stratalace.com',
   },
 }
 
@@ -68,12 +68,12 @@ export default async function HomePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://flowfoundry.ai/#organization",
-        "name": "FlowFoundry",
-        "url": "https://flowfoundry.ai",
+        "@id": "https://stratalace.com/#organization",
+        "name": "Stratalace",
+        "url": "https://stratalace.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://flowfoundry.ai/logo.png"
+          "url": "https://stratalace.com/logo.png"
         },
         "description": "AI transformation and business automation solutions with proven 340% average ROI. Expert consultancy in multi-agent systems and operational optimization.",
         "foundingDate": "2023",
@@ -94,34 +94,34 @@ export default async function HomePage() {
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "email": "hello@flowfoundry.ai",
+          "email": "hello@stratalace.com",
           "availableLanguage": "English"
         },
         "sameAs": [
-          "https://linkedin.com/company/flowfoundry",
-          "https://twitter.com/flowfoundry"
+          "https://linkedin.com/company/stratalace",
+          "https://twitter.com/stratalace"
         ]
       },
       {
         "@type": "WebSite",
-        "@id": "https://flowfoundry.ai/#website",
-        "url": "https://flowfoundry.ai",
-        "name": "FlowFoundry",
+        "@id": "https://stratalace.com/#website",
+        "url": "https://stratalace.com",
+        "name": "Stratalace",
         "publisher": {
-          "@id": "https://flowfoundry.ai/#organization"
+          "@id": "https://stratalace.com/#organization"
         },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://flowfoundry.ai/search?q={search_term_string}",
+          "target": "https://stratalace.com/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       },
       {
         "@type": "Service",
-        "@id": "https://flowfoundry.ai/#service",
+        "@id": "https://stratalace.com/#service",
         "name": "AI Transformation & Business Automation",
         "provider": {
-          "@id": "https://flowfoundry.ai/#organization"
+          "@id": "https://stratalace.com/#organization"
         },
         "description": "Comprehensive AI solutions including multi-agent systems, operational optimization, and business transformation with 340% average ROI.",
         "serviceType": "AI Consulting",

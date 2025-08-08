@@ -25,13 +25,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Technology Consultancy Services - Web Development & Digital Solutions',
     description: 'Comprehensive web development and technology solutions with 340% average ROI. Multi-agent systems, AI strategy, business transformation, and operational optimization.',
-    url: 'https://flowfoundry.ai/services',
+    url: 'https://stratalace.com/services',
     images: [
       {
         url: '/og-image-services.png',
         width: 1200,
         height: 630,
-        alt: 'FlowFoundry Technology Consultancy Services - 340% Average ROI',
+        alt: 'Stratalace Technology Consultancy Services - 340% Average ROI',
       },
     ],
     type: 'website',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     images: ['/og-image-services.png'],
   },
   alternates: {
-    canonical: 'https://flowfoundry.ai/services',
+    canonical: 'https://stratalace.com/services',
   },
 }
 
@@ -62,8 +62,8 @@ export default async function ServicesPage() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://flowfoundry.ai/services#collectionpage",
-        "url": "https://flowfoundry.ai/services",
+        "@id": "https://stratalace.com/services#collectionpage",
+        "url": "https://stratalace.com/services",
         "name": "Technology Consultancy Services",
         "description": "Comprehensive web development and technology solutions including custom web applications, digital consultancy, cloud deployment, and AI-enhanced features.",
         "mainEntity": {
@@ -73,9 +73,9 @@ export default async function ServicesPage() {
             "position": index + 1,
             "name": service.title,
             "description": service.description,
-            "url": `https://flowfoundry.ai/services/${service.slug}`,
+            "url": `https://stratalace.com/services/${service.slug}`,
             "provider": {
-              "@id": "https://flowfoundry.ai/#organization"
+              "@id": "https://stratalace.com/#organization"
             },
             "serviceType": "AI Consulting",
             "offers": service.pricing.map(tier => ({
@@ -93,13 +93,13 @@ export default async function ServicesPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://flowfoundry.ai/services#breadcrumb",
+        "@id": "https://stratalace.com/services#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "item": {
-              "@id": "https://flowfoundry.ai",
+              "@id": "https://stratalace.com",
               "name": "Home"
             }
           },
@@ -107,7 +107,7 @@ export default async function ServicesPage() {
             "@type": "ListItem",
             "position": 2,
             "item": {
-              "@id": "https://flowfoundry.ai/services",
+              "@id": "https://stratalace.com/services",
               "name": "Services"
             }
           }

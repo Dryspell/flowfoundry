@@ -71,7 +71,7 @@ export function MissionSection() {
         <div className="max-w-4xl mx-auto space-y-6 text-muted-foreground">
           <p className="leading-relaxed">
             Founded in 2020 by a team of AI researchers and business transformation experts, 
-            Flowfoundry emerged from a simple observation: while large enterprises were rapidly 
+            Stratalace emerged from a simple observation: while large enterprises were rapidly 
             adopting AI, small and mid-sized businesses were being left behind due to complexity, 
             cost, and lack of specialized expertise.
           </p>

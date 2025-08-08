@@ -1,7 +1,7 @@
 import { Page, expect } from '@playwright/test';
 
 /**
- * Shared test utilities for Flowfoundry Playwright tests
+ * Shared test utilities for Stratalace Playwright tests
  */
 
 export class TestHelpers {

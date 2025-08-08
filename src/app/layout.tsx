@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'FlowFoundry - Technology Consultancy & Web Development Solutions',
-    template: '%s | FlowFoundry'
+    default: 'Stratalace - Technology Consultancy & Web Development Solutions',
+    template: '%s | Stratalace'
   },
   description: 'Transform your business with AI-powered solutions. Expert consultancy in multi-agent systems, operational optimization, and custom AI development. 340% average ROI proven results.',
   keywords: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     'technology consultancy',
     'operational optimization'
   ],
-  authors: [{ name: 'FlowFoundry Team' }],
-  creator: 'FlowFoundry',
-  publisher: 'FlowFoundry',
+  authors: [{ name: 'Stratalace Team' }],
+  creator: 'Stratalace',
+  publisher: 'Stratalace',
   robots: {
     index: true,
     follow: true,
@@ -45,25 +45,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://flowfoundry.ai',
-    siteName: 'FlowFoundry',
-    title: 'FlowFoundry - Technology Consultancy & Web Development Solutions',
+    url: 'https://stratalace.com',
+    siteName: 'Stratalace',
+    title: 'Stratalace - Technology Consultancy & Web Development Solutions',
     description: 'Transform your business with AI-powered solutions. Expert consultancy in multi-agent systems, operational optimization, and custom AI development. 340% average ROI proven results.',
     images: [
       {
         url: '/og-image-default.png',
         width: 1200,
         height: 630,
-        alt: 'FlowFoundry - Technology Consultancy Solutions',
+        alt: 'Stratalace - Technology Consultancy Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FlowFoundry - Technology Consultancy & Web Development Solutions',
+    title: 'Stratalace - Technology Consultancy & Web Development Solutions',
     description: 'Transform your business with AI-powered solutions. Expert consultancy in multi-agent systems, operational optimization, and custom AI development.',
     images: ['/og-image-default.png'],
-    creator: '@flowfoundry',
+    creator: '@stratalace',
   },
   viewport: {
     width: 'device-width',

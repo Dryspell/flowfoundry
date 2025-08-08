@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 const testimonials = [
   {
     id: 1,
-    content: "Flowfoundry transformed our manufacturing operations with AI automation. We're seeing 40% faster production cycles and 60% fewer errors.",
+    content: "Stratalace transformed our manufacturing operations with AI automation. We're seeing 40% faster production cycles and 60% fewer errors.",
     author: "Sarah Chen",
     role: "Operations Director",
     company: "TechManufacturing Inc.",

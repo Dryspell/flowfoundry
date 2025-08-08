@@ -80,7 +80,7 @@ test.describe('Navigation - Header and Main Navigation', () => {
         expect(navigationHeader.page.url()).toContain(testCase.path);
         
         // Check that page title or main heading contains expected content
-        if (testCase.expectedTitle !== 'Flowfoundry') {
+        if (testCase.expectedTitle !== 'Stratalace') {
           const h1 = navigationHeader.page.locator('h1');
           await expect(h1).toContainText(new RegExp(testCase.expectedTitle, 'i'));
         }

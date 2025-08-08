@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   
   if (!service) {
     return {
-      title: 'Service Not Found | FlowFoundry',
+      title: 'Service Not Found | Stratalace',
       description: 'The requested service could not be found.'
     }
   }
@@ -37,27 +37,27 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       )
     ],
     openGraph: {
-      title: `${service.title} - Professional AI Solutions | FlowFoundry`,
+      title: `${service.title} - Professional AI Solutions | Stratalace`,
       description: `${service.subtitle}. ${primaryBenefit}. Starting from ${startingPrice}.`,
-      url: `https://flowfoundry.ai/services/${service.slug}`,
+      url: `https://stratalace.com/services/${service.slug}`,
       images: [
         {
           url: `/og-image-service-${service.slug}.png`,
           width: 1200,
           height: 630,
-          alt: `${service.title} - FlowFoundry AI Solutions`,
+          alt: `${service.title} - Stratalace AI Solutions`,
         },
       ],
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${service.title} - Professional AI Solutions | FlowFoundry`,
+      title: `${service.title} - Professional AI Solutions | Stratalace`,
       description: `${service.subtitle}. ${primaryBenefit}. Starting from ${startingPrice}.`,
       images: [`/og-image-service-${service.slug}.png`],
     },
     alternates: {
-      canonical: `https://flowfoundry.ai/services/${service.slug}`,
+      canonical: `https://stratalace.com/services/${service.slug}`,
     },
   }
 }
@@ -85,12 +85,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
     "@graph": [
       {
         "@type": "Service",
-        "@id": `https://flowfoundry.ai/services/${service.slug}#service`,
+        "@id": `https://stratalace.com/services/${service.slug}#service`,
         "name": service.title,
         "description": service.description,
-        "url": `https://flowfoundry.ai/services/${service.slug}`,
+        "url": `https://stratalace.com/services/${service.slug}`,
         "provider": {
-          "@id": "https://flowfoundry.ai/#organization"
+          "@id": "https://stratalace.com/#organization"
         },
         "serviceType": "AI Consulting",
         "category": service.title,
@@ -121,13 +121,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `https://flowfoundry.ai/services/${service.slug}#breadcrumb`,
+        "@id": `https://stratalace.com/services/${service.slug}#breadcrumb`,
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "item": {
-              "@id": "https://flowfoundry.ai",
+              "@id": "https://stratalace.com",
               "name": "Home"
             }
           },
@@ -135,7 +135,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             "@type": "ListItem",
             "position": 2,
             "item": {
-              "@id": "https://flowfoundry.ai/services",
+              "@id": "https://stratalace.com/services",
               "name": "Services"
             }
           },
@@ -143,7 +143,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             "@type": "ListItem",
             "position": 3,
             "item": {
-              "@id": `https://flowfoundry.ai/services/${service.slug}`,
+              "@id": `https://stratalace.com/services/${service.slug}`,
               "name": service.title
             }
           }

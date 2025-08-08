@@ -1,4 +1,4 @@
-// Sanity CMS schema types for Flowfoundry
+// Sanity CMS schema types for Stratalace
 
 export interface SiteSettings {
   title: string

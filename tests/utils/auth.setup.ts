@@ -4,14 +4,14 @@ import { test as setup, expect } from '@playwright/test';
  * Authentication setup for Playwright tests
  * 
  * This file handles any authentication state setup needed for tests.
- * For Flowfoundry (a marketing site), this is minimal, but provides
+ * For Stratalace (a marketing site), this is minimal, but provides
  * a foundation for future admin area testing.
  */
 
 const authFile = 'playwright/.auth/user.json';
 
 setup('authenticate', async ({ page }) => {
-  // For a marketing site like Flowfoundry, there's typically no authentication needed
+  // For a marketing site like Stratalace, there's typically no authentication needed
   // This setup ensures a clean state for all tests
   
   await page.goto('/');

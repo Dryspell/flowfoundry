@@ -2,7 +2,7 @@ import { Page, Locator, expect } from '@playwright/test';
 import { TestHelpers } from './test-helpers';
 
 /**
- * Page Object Models for Flowfoundry application
+ * Page Object Models for Stratalace application
  */
 
 export class HomePage {

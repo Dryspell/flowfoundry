@@ -1,4 +1,4 @@
-# Playwright Testing & Bug Fix Roadmap for Flowfoundry
+# Playwright Testing & Bug Fix Roadmap for Stratalace
 
 ## 🚨 Critical Issues Identified
 

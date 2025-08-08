@@ -270,7 +270,7 @@ test.describe('Homepage - Core Functionality', () => {
   test('should validate content accuracy', async () => {
     await test.step('Check hero section content', async () => {
       // Validate main headline
-      await expect(homePage.page.locator('h1')).toContainText(/AI|Flowfoundry|Transform/i);
+      await expect(homePage.page.locator('h1')).toContainText(/AI|Stratalace|Transform/i);
       
       // Validate value proposition
       const heroText = await homePage.heroSection.textContent();

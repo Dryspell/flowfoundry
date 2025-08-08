@@ -1,4 +1,4 @@
-// Global type definitions for the Flowfoundry platform
+// Global type definitions for the Stratalace platform
 
 declare global {
   namespace NodeJS {

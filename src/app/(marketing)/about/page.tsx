@@ -6,8 +6,8 @@ import { TeamSkeleton } from '@/components/skeletons/TeamSkeleton'
 import { MissionSkeleton } from '@/components/skeletons/MissionSkeleton'
 
 export const metadata: Metadata = {
-  title: 'About FlowFoundry - AI Experts & Business Transformation Leaders',
-  description: 'Meet the FlowFoundry team: AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results across industries.',
+  title: 'About Stratalace - AI Experts & Business Transformation Leaders',
+  description: 'Meet the Stratalace team: AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results across industries.',
   keywords: [
     'AI experts',
     'transformation consultants',
@@ -21,27 +21,27 @@ export const metadata: Metadata = {
     'operational optimization specialists'
   ],
   openGraph: {
-    title: 'About FlowFoundry - AI Experts & Business Transformation Leaders',
+    title: 'About Stratalace - AI Experts & Business Transformation Leaders',
     description: 'Meet our AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results.',
-    url: 'https://flowfoundry.ai/about',
+    url: 'https://stratalace.com/about',
     images: [
       {
         url: '/og-image-about.png',
         width: 1200,
         height: 630,
-        alt: 'FlowFoundry Team - AI Experts and Business Transformation Leaders',
+        alt: 'Stratalace Team - AI Experts and Business Transformation Leaders',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About FlowFoundry - AI Experts & Business Transformation Leaders',
+    title: 'About Stratalace - AI Experts & Business Transformation Leaders',
     description: 'Meet our AI experts from Google, Microsoft, and McKinsey. 15+ years experience, 100+ transformation projects, and proven 340% ROI results.',
     images: ['/og-image-about.png'],
   },
   alternates: {
-    canonical: 'https://flowfoundry.ai/about',
+    canonical: 'https://stratalace.com/about',
   },
 }
 
@@ -55,11 +55,11 @@ async function getTeamMembers() {
       id: "founder-ceo",
       name: "Alex Chen",
       role: "Founder & CEO",
-      bio: "Former Principal AI Engineer at Google with 15+ years in AI research and business transformation. Led AI initiatives at 3 Fortune 500 companies before founding Flowfoundry.",
+      bio: "Former Principal AI Engineer at Google with 15+ years in AI research and business transformation. Led AI initiatives at 3 Fortune 500 companies before founding Stratalace.",
       expertise: ["AI Strategy", "Business Transformation", "Multi-Agent Systems"],
       image: "/team/alex-chen.jpg",
       linkedin: "https://linkedin.com/in/alexchen-ai",
-      email: "alex@flowfoundry.ai",
+      email: "alex@stratalace.com",
       achievements: [
         "Led $50M+ AI transformation projects",
         "Published 25+ papers in top AI conferences", 
@@ -74,7 +74,7 @@ async function getTeamMembers() {
       expertise: ["Multi-Agent Systems", "AI Strategy", "Operational Optimization"],
       image: "/team/sarah-rodriguez.jpg",
       linkedin: "https://linkedin.com/in/sarahrodriguez-ai",
-      email: "sarah@flowfoundry.ai",
+      email: "sarah@stratalace.com",
       achievements: [
         "Designed AI systems for 50+ enterprises",
         "Expert in distributed multi-agent architectures",
@@ -89,7 +89,7 @@ async function getTeamMembers() {
       expertise: ["Business Transformation", "Operational Optimization", "AI Strategy"],
       image: "/team/michael-park.jpg",
       linkedin: "https://linkedin.com/in/michaelpark-consulting",
-      email: "michael@flowfoundry.ai",
+      email: "michael@stratalace.com",
       achievements: [
         "Delivered 100+ transformation projects",
         "Achieved average 340% ROI for clients",
@@ -104,7 +104,7 @@ async function getTeamMembers() {
       expertise: ["Multi-Agent Systems", "Operational Optimization"],
       image: "/team/emma-thompson.jpg",
       linkedin: "https://linkedin.com/in/emmathompson-ai",
-      email: "emma@flowfoundry.ai",
+      email: "emma@stratalace.com",
       achievements: [
         "Built production LLM systems at scale",
         "Contributed to GPT-4 training infrastructure",
@@ -119,7 +119,7 @@ async function getTeamMembers() {
       expertise: ["Business Transformation", "AI Strategy"],
       image: "/team/david-kumar.jpg",
       linkedin: "https://linkedin.com/in/davidkumar-strategy",
-      email: "david@flowfoundry.ai",
+      email: "david@stratalace.com",
       achievements: [
         "Helped 200+ SMBs adopt AI technology",
         "Developed proprietary ROI measurement frameworks",
@@ -134,7 +134,7 @@ async function getTeamMembers() {
       expertise: ["Multi-Agent Systems", "Operational Optimization"],
       image: "/team/jennifer-wu.jpg",
       linkedin: "https://linkedin.com/in/jenniferwu-cloud",
-      email: "jennifer@flowfoundry.ai",
+      email: "jennifer@stratalace.com",
       achievements: [
         "Deployed 75+ cloud-native AI solutions",
         "Expert in enterprise systems integration",
@@ -152,38 +152,38 @@ export default async function AboutPage() {
     "@graph": [
       {
         "@type": "AboutPage",
-        "@id": "https://flowfoundry.ai/about#aboutpage",
-        "url": "https://flowfoundry.ai/about",
-        "name": "About FlowFoundry",
-        "description": "Learn about FlowFoundry's AI experts and business transformation leaders with proven track records at Google, Microsoft, and McKinsey.",
+        "@id": "https://stratalace.com/about#aboutpage",
+        "url": "https://stratalace.com/about",
+        "name": "About Stratalace",
+        "description": "Learn about Stratalace's AI experts and business transformation leaders with proven track records at Google, Microsoft, and McKinsey.",
         "mainEntity": {
-          "@id": "https://flowfoundry.ai/#organization"
+          "@id": "https://stratalace.com/#organization"
         }
       },
       ...teamMembers.map((member) => ({
         "@type": "Person",
-        "@id": `https://flowfoundry.ai/about#${member.id}`,
+        "@id": `https://stratalace.com/about#${member.id}`,
         "name": member.name,
         "jobTitle": member.role,
         "description": member.bio,
         "url": member.linkedin,
         "email": member.email,
-        "image": `https://flowfoundry.ai${member.image}`,
+        "image": `https://stratalace.com${member.image}`,
         "worksFor": {
-          "@id": "https://flowfoundry.ai/#organization"
+          "@id": "https://stratalace.com/#organization"
         },
         "knowsAbout": member.expertise,
         "hasCredential": member.achievements
       })),
       {
         "@type": "BreadcrumbList",
-        "@id": "https://flowfoundry.ai/about#breadcrumb",
+        "@id": "https://stratalace.com/about#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "item": {
-              "@id": "https://flowfoundry.ai",
+              "@id": "https://stratalace.com",
               "name": "Home"
             }
           },
@@ -191,7 +191,7 @@ export default async function AboutPage() {
             "@type": "ListItem",
             "position": 2,
             "item": {
-              "@id": "https://flowfoundry.ai/about",
+              "@id": "https://stratalace.com/about",
               "name": "About"
             }
           }
@@ -210,7 +210,7 @@ export default async function AboutPage() {
       <section className="py-20 sm:py-32 bg-gradient-to-br from-background via-background to-muted/50">
         <div className="container mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
-            About Flowfoundry
+            About Stratalace
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We&apos;re on a mission to make enterprise-level AI accessible to every business. 

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   
   if (!caseStudy) {
     return {
-      title: 'Case Study Not Found | Flowfoundry',
+      title: 'Case Study Not Found | Stratalace',
       description: 'The requested case study could not be found.'
     }
   }
@@ -35,8 +35,8 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   const primaryResult = caseStudy.results.quantifiedResults[0]
   
   return {
-    title: `${caseStudy.title} | Flowfoundry Case Study`,
-    description: `Learn how ${caseStudy.client.name} achieved ${primaryResult?.improvement || 'significant improvements'} with Flowfoundry's AI solutions. ${caseStudy.challenge.overview.substring(0, 100)}...`,
+    title: `${caseStudy.title} | Stratalace Case Study`,
+    description: `Learn how ${caseStudy.client.name} achieved ${primaryResult?.improvement || 'significant improvements'} with Stratalace's AI solutions. ${caseStudy.challenge.overview.substring(0, 100)}...`,
     openGraph: {
       title: `${caseStudy.title} - Real AI Transformation Results`,
       description: `${primaryResult?.improvement || 'Significant improvement'} in ${primaryResult?.timeframe || 'months'}. See the full case study.`,

@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Success Stories & Case Studies - 340% Average ROI Results',
     description: 'Real businesses, real results. See how our AI solutions delivered 340% ROI, 65% efficiency gains, and 98% client satisfaction across industries.',
-    url: 'https://flowfoundry.ai/case-studies',
+    url: 'https://stratalace.com/case-studies',
     images: [
       {
         url: '/og-image-case-studies.png',
         width: 1200,
         height: 630,
-        alt: 'FlowFoundry AI Success Stories - 340% Average ROI',
+        alt: 'Stratalace AI Success Stories - 340% Average ROI',
       },
     ],
     type: 'website',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ['/og-image-case-studies.png'],
   },
   alternates: {
-    canonical: 'https://flowfoundry.ai/case-studies',
+    canonical: 'https://stratalace.com/case-studies',
   },
 }
 
@@ -53,25 +53,25 @@ export default async function CaseStudiesPage() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://flowfoundry.ai/case-studies#collectionpage",
-        "url": "https://flowfoundry.ai/case-studies",
+        "@id": "https://stratalace.com/case-studies#collectionpage",
+        "url": "https://stratalace.com/case-studies",
         "name": "Technology Solutions & Case Studies",
         "description": "Real web development and technology transformation results with 340% average ROI across manufacturing, retail, healthcare, and financial services.",
         "mainEntity": {
           "@type": "ItemList",
           "name": "Technology Case Studies",
-          "description": "Success stories and case studies from FlowFoundry's web development and technology transformation projects"
+          "description": "Success stories and case studies from Stratalace's web development and technology transformation projects"
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://flowfoundry.ai/case-studies#breadcrumb",
+        "@id": "https://stratalace.com/case-studies#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "item": {
-              "@id": "https://flowfoundry.ai",
+              "@id": "https://stratalace.com",
               "name": "Home"
             }
           },
@@ -79,7 +79,7 @@ export default async function CaseStudiesPage() {
             "@type": "ListItem",
             "position": 2,
             "item": {
-              "@id": "https://flowfoundry.ai/case-studies",
+              "@id": "https://stratalace.com/case-studies",
               "name": "Case Studies"
             }
           }

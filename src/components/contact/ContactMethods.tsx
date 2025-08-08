@@ -29,10 +29,10 @@ const contactInfo: ContactMethodsType = {
     hours: "Monday-Friday, 9 AM - 6 PM PST"
   },
   email: {
-    general: "hello@flowfoundry.ai",
-    sales: "sales@flowfoundry.ai",
-    support: "support@flowfoundry.ai",
-    emergency: "urgent@flowfoundry.ai"
+    general: "hello@stratalace.com",
+    sales: "sales@stratalace.com",
+    support: "support@stratalace.com",
+    emergency: "urgent@stratalace.com"
   },
   address: {
     street: "123 Innovation Drive",
@@ -42,8 +42,8 @@ const contactInfo: ContactMethodsType = {
     country: "United States"
   },
   social: {
-    linkedin: "https://linkedin.com/company/flowfoundry",
-    twitter: "https://twitter.com/flowfoundry"
+    linkedin: "https://linkedin.com/company/stratalace",
+    twitter: "https://twitter.com/stratalace"
   }
 }
 
